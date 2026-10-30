@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.fatihaydost.houra",
+  "name": "Houra",
+  "version": "1.0.0",
+  "author": "Fatih Aydost",
+  "license": "MIT",
+  "description": "A calm focus timer, five ambient on-screen views, multi-monitor full-screen breaks, weekly Markdown tasks, and local SQLite focus statistics for Omarchy.",
+  "homepage": "https://github.com/fatihaydost/omarchy-houra",
+  "kinds": [
+    "service",
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "service": "Service.qml",
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Houra",
+    "description": "Calm focus timer with ambient on-screen views, break overlay, and session analytics.",
+    "category": "Productivity",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "schema": [
+      {
+        "key": "showTimerInBar",
+        "type": "boolean",
+        "label": "Show timer in bar",
+        "description": "Show MM:SS countdown or elapsed focus time next to the Houra glyph.",
+        "defaultValue": true
+      }
+    ],
+    "defaults": {
+      "showTimerInBar": true
+    }
+  }
+}

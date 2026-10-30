@@ -1,0 +1,141 @@
+{
+  "flow": {
+    "clip": "flow.mp4",
+    "outWidth": 880,
+    "outHeight": 495,
+    "trim": {
+      "startSec": 0.5,
+      "endSec": 19.5
+    },
+    "camera": [
+      {
+        "atSec": 0,
+        "x": 0,
+        "y": 42,
+        "w": 1920,
+        "h": 1023
+      },
+      {
+        "atSec": 1.2,
+        "x": 96,
+        "y": 97,
+        "w": 1727,
+        "h": 920
+      },
+      {
+        "atSec": 8.0,
+        "x": 96,
+        "y": 97,
+        "w": 1727,
+        "h": 920
+      },
+      {
+        "atSec": 9.0,
+        "x": 0,
+        "y": 42,
+        "w": 1920,
+        "h": 1023
+      }
+    ],
+    "gif": {
+      "colors": 128
+    }
+  },
+  "widgets": {
+    "clip": "widgets.mp4",
+    "outWidth": 728,
+    "outHeight": 756,
+    "trim": {
+      "startSec": 1.0,
+      "endSec": 24.2
+    },
+    "camera": [
+      {
+        "atSec": 0,
+        "x": 1032,
+        "y": 150,
+        "w": 888,
+        "h": 925
+      }
+    ]
+  },
+  "snap": {
+    "clip": "snap.mp4",
+    "outWidth": 960,
+    "outHeight": 540,
+    "trim": {
+      "startSec": 0.8,
+      "endSec": 8.4
+    },
+    "camera": [
+      {
+        "atSec": 0,
+        "x": 0,
+        "y": 42,
+        "w": 1920,
+        "h": 1028
+      }
+    ]
+  },
+  "rest": {
+    "clip": "rest.mp4",
+    "outWidth": 720,
+    "outHeight": 405,
+    "trim": {
+      "startSec": 0.3,
+      "endSec": 8.3
+    },
+    "camera": [
+      {
+        "atSec": 0,
+        "x": 0,
+        "y": 35,
+        "w": 1920,
+        "h": 1010
+      }
+    ],
+    "gif": {
+      "fps": 8,
+      "colors": 48
+    }
+  },
+  "stats": {
+    "clip": "stats.mp4",
+    "outWidth": 1000,
+    "outHeight": 661,
+    "trim": {
+      "startSec": 0.8,
+      "endSec": 20.3
+    },
+    "camera": [
+      {
+        "atSec": 0,
+        "x": 211,
+        "y": 77,
+        "w": 1498,
+        "h": 960
+      }
+    ]
+  },
+  "todoist": {
+    "clip": "todoist.mp4",
+    "outWidth": 880,
+    "outHeight": 495,
+    "trim": {
+      "startSec": 0.5,
+      "endSec": 23.3
+    },
+    "camera": [
+      {
+        "atSec": 0,
+        "x": 0,
+        "y": 42,
+        "w": 1920,
+        "h": 1023
+      }
+    ],
+    "gif": {
+      "colors": 128
+    }
+  }
+}
