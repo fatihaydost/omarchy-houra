@@ -108,7 +108,22 @@ def db_path() -> Path:
     base = Path(xdg_data).expanduser() if xdg_data else (Path.home() / ".local" / "share")
     folder = base / "houra"
     folder.mkdir(parents=True, exist_ok=True)
+    try:
+        os.chmod(folder, 0o700)
+    except OSError:
+        pass
     return folder / "houra.sqlite"
+
+
+def _secure_db_files(path: Path) -> None:
+    # Session notes, goals and tasks are private; SQLite creates its -wal/-shm with the database's mode
+    fd = os.open(str(path), os.O_RDWR | os.O_CREAT, 0o600)
+    os.close(fd)
+    for suffix in ("", "-wal", "-shm", "-journal"):
+        try:
+            os.chmod(str(path) + suffix, 0o600)
+        except FileNotFoundError:
+            pass
 
 
 def config_path() -> Path:
@@ -208,7 +223,9 @@ def save_settings(patch: dict[str, Any]) -> dict[str, Any]:
 
 
 def open_db(lang: str = "en") -> sqlite3.Connection:
-    conn = sqlite3.connect(str(db_path()))
+    path = db_path()
+    _secure_db_files(path)
+    conn = sqlite3.connect(str(path))
     conn.row_factory = sqlite3.Row
     conn.executescript(
         """

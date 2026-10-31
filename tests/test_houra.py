@@ -151,6 +151,37 @@ class HouraBackendAndMarketplaceTests(unittest.TestCase):
         all_hist_ids = [s["id"] for grp in deleted["history"] for s in grp["sessions"]]
         self.assertNotIn(third_id, all_hist_ids)
 
+    def test_private_history_database_modes(self) -> None:
+        # Session notes, goals and tasks must not be readable by other local accounts (umask 022 default)
+        data_home = Path(self.tmp.name) / "xdg-data"
+        env = dict(self.env)
+        env.pop("HOURA_DB")
+        env["XDG_DATA_HOME"] = str(data_home)
+        folder = data_home / "houra"
+        db = folder / "houra.sqlite"
+
+        def mode(path: Path) -> int:
+            return stat.S_IMODE(path.stat().st_mode)
+
+        def run(cmd: str, payload: dict) -> None:
+            subprocess.run(["python3", str(CLI), cmd, json.dumps(payload)], env=env, check=True,
+                           capture_output=True, preexec_fn=lambda: os.umask(0o022))
+
+        run("start-session", {"categoryId": 1, "goal": "private goal", "workMinutes": 25, "breakMinutes": 5})
+        self.assertEqual(mode(folder), 0o700)
+        self.assertEqual(mode(db), 0o600)
+        for side in ("-wal", "-shm"):
+            side_path = Path(str(db) + side)
+            if side_path.exists():
+                self.assertEqual(mode(side_path), 0o600, side)
+
+        # An install created before this fix (0755 folder, 0644 files) is tightened on the next open
+        os.chmod(folder, 0o755)
+        os.chmod(db, 0o644)
+        run("snapshot", {})
+        self.assertEqual(mode(folder), 0o700)
+        self.assertEqual(mode(db), 0o600)
+
     def test_weekly_markdown_wildcard_and_obsidian_syntax(self) -> None:
         vault = Path(self.tmp.name) / "200-Weekly"
         vault.mkdir()
