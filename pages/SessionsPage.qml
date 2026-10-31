@@ -248,6 +248,7 @@ Item {
           spacing: 3
 
           Text {
+            textFormat: Text.PlainText
             text: Theme.t(root.lang, "OTURUMLAR", "SESSIONS")
             font.family: root.fontFamily
             font.pixelSize: 10
@@ -257,6 +258,7 @@ Item {
           }
 
           Text {
+            textFormat: Text.PlainText
             text: Theme.t(root.lang, "Geçmiş", "History")
             font.family: root.fontFamily
             font.pixelSize: 26
@@ -295,6 +297,7 @@ Item {
                 color: active ? (root.tokens.raised || "#2b2b33") : "transparent"
 
                 Text {
+                  textFormat: Text.PlainText
                   id: nfTxt
                   anchors.centerIn: parent
                   text: modelData.label
@@ -331,6 +334,7 @@ Item {
           border.color: kbFocused ? (root.tokens.accent || "#3d8cff") : (active ? "transparent" : (root.tokens.line || Qt.rgba(1, 1, 1, 0.09)))
 
           Text {
+            textFormat: Text.PlainText
             id: allCatsTxt
             anchors.centerIn: parent
             text: Theme.t(root.lang, "Tüm kategoriler", "All categories")
@@ -358,6 +362,7 @@ Item {
           border.color: root.tokens.lineStrong || Qt.rgba(1, 1, 1, 0.2)
 
           Text {
+            textFormat: Text.PlainText
             id: dayChipLbl
             anchors.centerIn: parent
             text: root.filterDay + "  ×"
@@ -405,6 +410,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 anchors.verticalCenter: parent.verticalCenter
                 text: cat.name
                 font.family: root.fontFamily
@@ -439,6 +445,7 @@ Item {
         border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.08)
 
         Text {
+          textFormat: Text.PlainText
           anchors.centerIn: parent
           text: Theme.t(root.lang, "Seçili filtreyle eşleşen oturum bulunamadı.", "No sessions match the current filter.")
           font.family: root.fontFamily
@@ -460,6 +467,7 @@ Item {
             height: 22
 
             Text {
+              textFormat: Text.PlainText
               anchors.left: parent.left
               anchors.verticalCenter: parent.verticalCenter
               text: Theme.formatDayHeading(dgrp.day, root.lang)
@@ -470,6 +478,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               anchors.right: parent.right
               anchors.verticalCenter: parent.verticalCenter
               text: Theme.formatMinutes(dgrp.totalMinutes || 0, root.lang)
@@ -539,6 +548,7 @@ Item {
                     }
 
                     Text {
+                      textFormat: Text.PlainText
                       anchors.verticalCenter: parent.verticalCenter
                       text: s.categoryName
                       font.family: root.fontFamily
@@ -548,6 +558,7 @@ Item {
                     }
 
                     Text {
+                      textFormat: Text.PlainText
                       visible: (s.goal || "").length > 0 && s.goal !== s.categoryName
                       anchors.verticalCenter: parent.verticalCenter
                       text: "·  " + s.goal
@@ -567,6 +578,7 @@ Item {
                       color: Theme.withAlpha(root.tokens.danger || "#e06458", 0.18)
 
                       Text {
+                        textFormat: Text.PlainText
                         id: emBadge
                         anchors.centerIn: parent
                         text: Theme.t(root.lang, "acil çıkış", "early exit")
@@ -583,6 +595,7 @@ Item {
                     spacing: 10
 
                     Text {
+                      textFormat: Text.PlainText
                       visible: (s.note || "").length > 0
                       anchors.verticalCenter: parent.verticalCenter
                       text: "📝"
@@ -590,6 +603,7 @@ Item {
                     }
 
                     Text {
+                      textFormat: Text.PlainText
                       visible: (Number(s.todosTotal) || 0) > 0
                       anchors.verticalCenter: parent.verticalCenter
                       text: (s.todosDone || 0) + "/" + (s.todosTotal || 0) + " " + Theme.t(root.lang, "görev", "tasks")
@@ -599,6 +613,7 @@ Item {
                     }
 
                     Text {
+                      textFormat: Text.PlainText
                       visible: (s.rhythmLabel || "").length > 0
                       anchors.verticalCenter: parent.verticalCenter
                       text: s.rhythmLabel || ""
@@ -608,6 +623,7 @@ Item {
                     }
 
                     Text {
+                      textFormat: Text.PlainText
                       anchors.verticalCenter: parent.verticalCenter
                       text: Theme.formatHM(s.start) + " – " + Theme.formatHM(s.end)
                       font.family: "Monospace"
@@ -616,6 +632,7 @@ Item {
                     }
 
                     Text {
+                      textFormat: Text.PlainText
                       anchors.verticalCenter: parent.verticalCenter
                       width: 62
                       horizontalAlignment: Text.AlignRight
@@ -642,6 +659,7 @@ Item {
                         : (root.tokens.line || Qt.rgba(1, 1, 1, 0.10))
 
                       Text {
+                        textFormat: Text.PlainText
                         id: delSessionLbl
                         anchors.centerIn: parent
                         text: parent.confirming
@@ -694,8 +712,9 @@ Item {
                       readonly property var stodo: s.todos[index]
                       width: rowCol.width
                       spacing: 8
-                      Text { text: Theme.todoEmoji(stodo.state); font.pixelSize: 13 }
+                      Text { textFormat: Text.PlainText; text: Theme.todoEmoji(stodo.state); font.pixelSize: 13 }
                       Text {
+                        textFormat: Text.PlainText
                         width: parent.width - 26
                         wrapMode: Text.WordWrap
                         text: stodo.detail ? (stodo.title + " — " + stodo.detail) : stodo.title
@@ -716,6 +735,7 @@ Item {
                     border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.08)
 
                     Text {
+                      textFormat: Text.PlainText
                       id: noteBodyTxt
                       anchors.fill: parent
                       anchors.margins: 10
@@ -728,6 +748,7 @@ Item {
                   }
 
                   Text {
+                    textFormat: Text.PlainText
                     visible: !hasDetails
                     text: Theme.t(root.lang, "Bu oturuma ait görev veya not yok.", "No tasks or notes attached to this session.")
                     font.family: root.fontFamily

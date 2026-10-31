@@ -182,6 +182,20 @@ class HouraBackendAndMarketplaceTests(unittest.TestCase):
         self.assertEqual(mode(folder), 0o700)
         self.assertEqual(mode(db), 0o600)
 
+    def test_text_items_never_render_rich_text(self) -> None:
+        # Task titles and notes can come from Todoist or Markdown; AutoText would render HTML and fetch <img> URLs
+        missing = []
+        for path in sorted(ROOT.rglob("*.qml")):
+            if "media" in path.parts or "node_modules" in path.parts:
+                continue
+            lines = path.read_text().split("\n")
+            for i, line in enumerate(lines):
+                if re.search(r"(^|[^A-Za-z.])(Text|TextEdit) \{", line):
+                    window = line + "".join(lines[i + 1:i + 3])
+                    if "PlainText" not in window:
+                        missing.append(f"{path.relative_to(ROOT)}:{i + 1}")
+        self.assertEqual(missing, [], "Text items without textFormat PlainText")
+
     def test_weekly_markdown_wildcard_and_obsidian_syntax(self) -> None:
         vault = Path(self.tmp.name) / "200-Weekly"
         vault.mkdir()

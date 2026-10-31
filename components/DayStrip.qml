@@ -103,6 +103,7 @@ Item {
     Repeater {
       model: [8, 11, 14, 17, 20]
       delegate: Text {
+        textFormat: Text.PlainText
         readonly property int hr: modelData
         x: hr === 8 ? 0 : (hr === 20 ? parent.width - implicitWidth : ((hr - root.startHour) / root.spanHours) * parent.width - implicitWidth / 2)
         text: (hr < 10 ? "0" + hr : String(hr))

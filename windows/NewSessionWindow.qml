@@ -697,6 +697,7 @@ Item {
               height: 24
 
               Text {
+                textFormat: Text.PlainText
                 anchors.left: parent.left
                 anchors.verticalCenter: parent.verticalCenter
                 text: Theme.t(root.lang, "YENİ OTURUM", "NEW SESSION")
@@ -713,6 +714,7 @@ Item {
                 spacing: 8
 
                 Text {
+                  textFormat: Text.PlainText
                   anchors.verticalCenter: parent.verticalCenter
                   text: "Esc"
                   font.family: "Monospace"
@@ -730,6 +732,7 @@ Item {
                     : "transparent"
 
                   Text {
+                    textFormat: Text.PlainText
                     anchors.centerIn: parent
                     text: "×"
                     font.family: root.fontFamily
@@ -797,6 +800,7 @@ Item {
                       }
 
                       Text {
+                        textFormat: Text.PlainText
                         anchors.verticalCenter: parent.verticalCenter
                         text: cat.name || ""
                         font.family: root.fontFamily
@@ -828,6 +832,7 @@ Item {
                 height: 34
 
                 Text {
+                  textFormat: Text.PlainText
                   anchors.left: parent.left
                   anchors.verticalCenter: parent.verticalCenter
                   visible: goalField.text.length === 0
@@ -880,6 +885,7 @@ Item {
                   color: root.tokens.raised || "#2a2a32"
 
                   Text {
+                    textFormat: Text.PlainText
                     id: selCntTxt
                     anchors.centerIn: parent
                     text: root.totalSelectedTasks + " " + Theme.t(root.lang, "seçili", "selected")
@@ -904,6 +910,7 @@ Item {
                     spacing: 6
 
                     Text {
+                      textFormat: Text.PlainText
                       visible: root.taskTabChoices.length === 0
                       anchors.verticalCenter: parent.verticalCenter
                       text: Theme.t(root.lang, "GÖREVLER", "TASKS")
@@ -926,6 +933,7 @@ Item {
                         border.color: active ? (root.tokens.lineStrong || Qt.rgba(1, 1, 1, 0.2)) : "transparent"
 
                         Text {
+                          textFormat: Text.PlainText
                           id: segLbl
                           anchors.centerIn: parent
                           text: modelData.label
@@ -1001,6 +1009,7 @@ Item {
                           spacing: 7
 
                           Text {
+                            textFormat: Text.PlainText
                             anchors.verticalCenter: parent.verticalCenter
                             text: tdChoiceRow.chosen ? "✓" : "○"
                             font.pixelSize: 12
@@ -1011,6 +1020,7 @@ Item {
                           }
 
                           Text {
+                            textFormat: Text.PlainText
                             visible: tdChoiceRow.prio > 1
                             anchors.verticalCenter: parent.verticalCenter
                             text: Theme.priorityLabel(tdChoiceRow.prio)
@@ -1021,6 +1031,7 @@ Item {
                           }
 
                           Text {
+                            textFormat: Text.PlainText
                             width: Math.max(80, parent.width - (tdChoiceRow.prio > 1 ? 48 : 24) - (tdChoiceRow.rightMeta !== "" ? 76 : 0))
                             anchors.verticalCenter: parent.verticalCenter
                             text: td.detail ? (td.title + " — " + td.detail) : td.title
@@ -1031,6 +1042,7 @@ Item {
                           }
 
                           Text {
+                            textFormat: Text.PlainText
                             visible: tdChoiceRow.rightMeta !== ""
                             width: 68
                             horizontalAlignment: Text.AlignRight
@@ -1082,6 +1094,7 @@ Item {
                           spacing: 7
 
                           Text {
+                            textFormat: Text.PlainText
                             anchors.verticalCenter: parent.verticalCenter
                             text: plChoiceRow.chosen ? "✓" : "○"
                             font.pixelSize: 12
@@ -1092,6 +1105,7 @@ Item {
                           }
 
                           Text {
+                            textFormat: Text.PlainText
                             visible: plChoiceRow.prio > 1
                             anchors.verticalCenter: parent.verticalCenter
                             text: Theme.priorityLabel(plChoiceRow.prio)
@@ -1111,6 +1125,7 @@ Item {
                           }
 
                           Text {
+                            textFormat: Text.PlainText
                             width: Math.max(80, parent.width - 134 - (plChoiceRow.prio > 1 ? 22 : 0))
                             anchors.verticalCenter: parent.verticalCenter
                             text: pl.detail ? (pl.title + " — " + pl.detail) : (pl.title || "")
@@ -1121,6 +1136,7 @@ Item {
                           }
 
                           Text {
+                            textFormat: Text.PlainText
                             anchors.verticalCenter: parent.verticalCenter
                             text: plChoiceRow.metaLbl
                             elide: Text.ElideRight
@@ -1166,6 +1182,7 @@ Item {
                           spacing: 7
 
                           Text {
+                            textFormat: Text.PlainText
                             anchors.verticalCenter: parent.verticalCenter
                             text: tdistChoiceRow.chosen ? "✓" : "○"
                             font.pixelSize: 12
@@ -1186,6 +1203,7 @@ Item {
                           }
 
                           Text {
+                            textFormat: Text.PlainText
                             visible: tdistChoiceRow.prio > 1
                             anchors.verticalCenter: parent.verticalCenter
                             text: Theme.priorityLabel(tdistChoiceRow.prio)
@@ -1196,6 +1214,7 @@ Item {
                           }
 
                           Text {
+                            textFormat: Text.PlainText
                             width: Math.max(80, parent.width - 134 - (tdistChoiceRow.prio > 1 ? 22 : 0))
                             anchors.verticalCenter: parent.verticalCenter
                             text: tdist.title || ""
@@ -1206,6 +1225,7 @@ Item {
                           }
 
                           Text {
+                            textFormat: Text.PlainText
                             anchors.verticalCenter: parent.verticalCenter
                             text: tdist.dueLabel
                               ? ("#" + (tdist.projectName || "Inbox") + " · " + tdist.dueLabel)
@@ -1255,6 +1275,7 @@ Item {
                           spacing: 7
 
                           Text {
+                            textFormat: Text.PlainText
                             anchors.verticalCenter: parent.verticalCenter
                             text: wtChoiceRow.chosen ? "✓" : (wt.waiting ? "◌" : "○")
                             font.pixelSize: 12
@@ -1271,6 +1292,7 @@ Item {
                           }
 
                           Text {
+                            textFormat: Text.PlainText
                             width: Math.max(80, parent.width - 96)
                             anchors.verticalCenter: parent.verticalCenter
                             text: (wt.subgroup && (Number(wt.depth) || 0) === 0) ? (wt.subgroup + " › " + wt.title) : wt.title
@@ -1281,6 +1303,7 @@ Item {
                           }
 
                           Text {
+                            textFormat: Text.PlainText
                             anchors.verticalCenter: parent.verticalCenter
                             text: wt.waiting ? Theme.t(root.lang, "bekliyor", "waiting") : (wt.group || "")
                             elide: Text.ElideRight
@@ -1331,6 +1354,7 @@ Item {
                       spacing: 5
 
                       Text {
+                        textFormat: Text.PlainText
                         visible: etPrio > 1
                         anchors.verticalCenter: parent.verticalCenter
                         text: Theme.priorityLabel(etPrio)
@@ -1341,6 +1365,7 @@ Item {
                       }
 
                       Text {
+                        textFormat: Text.PlainText
                         id: etTxt
                         anchors.verticalCenter: parent.verticalCenter
                         text: "✓ " + et.title + (et.createOnTodoist ? " · Todoist" : "")
@@ -1350,6 +1375,7 @@ Item {
                       }
 
                       Text {
+                        textFormat: Text.PlainText
                         anchors.verticalCenter: parent.verticalCenter
                         text: "×"
                         font.pixelSize: 13
@@ -1381,6 +1407,7 @@ Item {
                     : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08))
 
                   Text {
+                    textFormat: Text.PlainText
                     anchors.left: parent.left
                     anchors.leftMargin: 10
                     anchors.verticalCenter: parent.verticalCenter
@@ -1418,6 +1445,7 @@ Item {
                     : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08))
 
                   Text {
+                    textFormat: Text.PlainText
                     anchors.left: parent.left
                     anchors.leftMargin: 10
                     anchors.verticalCenter: parent.verticalCenter
@@ -1451,6 +1479,7 @@ Item {
                   border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.1)
 
                   Text {
+                    textFormat: Text.PlainText
                     anchors.centerIn: parent
                     text: "+"
                     font.pixelSize: 15
@@ -1490,6 +1519,7 @@ Item {
                       : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08))
 
                     Text {
+                      textFormat: Text.PlainText
                       anchors.centerIn: parent
                       text: Theme.priorityLabel(parent.pVal)
                       font.family: "Monospace"
@@ -1524,6 +1554,7 @@ Item {
                     : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08))
 
                   Text {
+                    textFormat: Text.PlainText
                     id: inlTdTxt
                     anchors.centerIn: parent
                     text: root.inlineCreateOnTodoist
@@ -1552,6 +1583,7 @@ Item {
               spacing: 8
 
               Text {
+                textFormat: Text.PlainText
                 text: Theme.t(root.lang, "RİTİM", "RHYTHM")
                 font.family: root.fontFamily
                 font.pixelSize: 10
@@ -1605,6 +1637,7 @@ Item {
                       Row {
                         spacing: 6
                         Text {
+                          textFormat: Text.PlainText
                           text: modelData.num
                           font.family: root.fontFamily
                           font.pixelSize: 24
@@ -1612,6 +1645,7 @@ Item {
                           color: root.tokens.ink || "#ffffff"
                         }
                         Text {
+                          textFormat: Text.PlainText
                           anchors.bottom: parent.bottom
                           anchors.bottomMargin: 3
                           text: modelData.unit
@@ -1622,6 +1656,7 @@ Item {
                       }
 
                       Text {
+                        textFormat: Text.PlainText
                         text: modelData.sub
                         font.family: root.fontFamily
                         font.pixelSize: 11
@@ -1677,6 +1712,7 @@ Item {
                     spacing: 2
 
                     Text {
+                      textFormat: Text.PlainText
                       text: Theme.t(root.lang, "Özel süre", "Custom duration")
                       font.family: root.fontFamily
                       font.pixelSize: 14
@@ -1685,6 +1721,7 @@ Item {
                     }
 
                     Text {
+                      textFormat: Text.PlainText
                       width: parent.width
                       elide: Text.ElideRight
                       text: root.customWorkMin + " " + Theme.t(root.lang, "dk odak", "min focus") +
@@ -1707,6 +1744,7 @@ Item {
                       anchors.verticalCenter: parent.verticalCenter
 
                       Text {
+                        textFormat: Text.PlainText
                         anchors.verticalCenter: parent.verticalCenter
                         text: Theme.t(root.lang, "Odak", "Focus")
                         font.family: root.fontFamily
@@ -1721,7 +1759,7 @@ Item {
                         color: wMinusHov.containsMouse ? (root.tokens.raised || "#32323c") : (root.tokens.card2 || "#1f1f26")
                         border.width: 1
                         border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.1)
-                        Text { anchors.centerIn: parent; text: "−"; font.pixelSize: 13; color: root.tokens.ink || "#ffffff" }
+                        Text { textFormat: Text.PlainText; anchors.centerIn: parent; text: "−"; font.pixelSize: 13; color: root.tokens.ink || "#ffffff" }
                         MouseArea {
                           id: wMinusHov
                           anchors.fill: parent
@@ -1771,7 +1809,7 @@ Item {
                         color: wPlusHov.containsMouse ? (root.tokens.raised || "#32323c") : (root.tokens.card2 || "#1f1f26")
                         border.width: 1
                         border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.1)
-                        Text { anchors.centerIn: parent; text: "+"; font.pixelSize: 13; color: root.tokens.ink || "#ffffff" }
+                        Text { textFormat: Text.PlainText; anchors.centerIn: parent; text: "+"; font.pixelSize: 13; color: root.tokens.ink || "#ffffff" }
                         MouseArea {
                           id: wPlusHov
                           anchors.fill: parent
@@ -1788,6 +1826,7 @@ Item {
                       anchors.verticalCenter: parent.verticalCenter
 
                       Text {
+                        textFormat: Text.PlainText
                         anchors.verticalCenter: parent.verticalCenter
                         text: Theme.t(root.lang, "Mola", "Break")
                         font.family: root.fontFamily
@@ -1802,7 +1841,7 @@ Item {
                         color: rMinusHov.containsMouse ? (root.tokens.raised || "#32323c") : (root.tokens.card2 || "#1f1f26")
                         border.width: 1
                         border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.1)
-                        Text { anchors.centerIn: parent; text: "−"; font.pixelSize: 13; color: root.tokens.ink || "#ffffff" }
+                        Text { textFormat: Text.PlainText; anchors.centerIn: parent; text: "−"; font.pixelSize: 13; color: root.tokens.ink || "#ffffff" }
                         MouseArea {
                           id: rMinusHov
                           anchors.fill: parent
@@ -1852,7 +1891,7 @@ Item {
                         color: rPlusHov.containsMouse ? (root.tokens.raised || "#32323c") : (root.tokens.card2 || "#1f1f26")
                         border.width: 1
                         border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.1)
-                        Text { anchors.centerIn: parent; text: "+"; font.pixelSize: 13; color: root.tokens.ink || "#ffffff" }
+                        Text { textFormat: Text.PlainText; anchors.centerIn: parent; text: "+"; font.pixelSize: 13; color: root.tokens.ink || "#ffffff" }
                         MouseArea {
                           id: rPlusHov
                           anchors.fill: parent
@@ -1890,6 +1929,7 @@ Item {
                   spacing: 12
 
                   Text {
+                    textFormat: Text.PlainText
                     width: 26
                     anchors.verticalCenter: parent.verticalCenter
                     horizontalAlignment: Text.AlignHCenter
@@ -1907,6 +1947,7 @@ Item {
                     spacing: 2
 
                     Text {
+                      textFormat: Text.PlainText
                       text: Theme.t(root.lang, "Serbest", "Free")
                       font.family: root.fontFamily
                       font.pixelSize: 14
@@ -1915,6 +1956,7 @@ Item {
                     }
 
                     Text {
+                      textFormat: Text.PlainText
                       width: parent.width
                       wrapMode: Text.WordWrap
                       text: Theme.t(
@@ -1945,6 +1987,7 @@ Item {
               height: 38
 
               Text {
+                textFormat: Text.PlainText
                 anchors.left: parent.left
                 anchors.right: footerBtnsRow.left
                 anchors.rightMargin: 10
@@ -1975,6 +2018,7 @@ Item {
                   border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.1)
 
                   Text {
+                    textFormat: Text.PlainText
                     anchors.centerIn: parent
                     text: Theme.t(root.lang, "İptal", "Cancel")
                     font.family: root.fontFamily
@@ -2000,6 +2044,7 @@ Item {
                     : (root.tokens.primaryBg || "#ffffff")
 
                   Text {
+                    textFormat: Text.PlainText
                     id: startBtnLbl
                     anchors.centerIn: parent
                     text: {

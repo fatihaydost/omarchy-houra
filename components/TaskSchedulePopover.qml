@@ -312,6 +312,7 @@ Rectangle {
       height: 22
 
       Text {
+        textFormat: Text.PlainText
         anchors.left: parent.left
         anchors.right: closeBtn.left
         anchors.rightMargin: 8
@@ -336,6 +337,7 @@ Rectangle {
         color: closeMa.containsMouse ? (root.tokens.card2 || "#222228") : "transparent"
 
         Text {
+          textFormat: Text.PlainText
           anchors.centerIn: parent
           text: "✕"
           font.family: root.fontFamily
@@ -383,6 +385,7 @@ Rectangle {
           border.color: active ? "transparent" : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08))
 
           Text {
+            textFormat: Text.PlainText
             id: presetLbl
             anchors.centerIn: parent
             text: Theme.t(root.lang, modelData.tr, modelData.en)
@@ -434,6 +437,7 @@ Rectangle {
             spacing: 1
 
             Text {
+              textFormat: Text.PlainText
               text: modelData.label
               font.family: root.fontFamily
               font.pixelSize: 9
@@ -441,6 +445,7 @@ Rectangle {
             }
 
             Text {
+              textFormat: Text.PlainText
               text: Theme.formatShortDay(modelData.val, root.lang)
               font.family: root.fontFamily
               font.pixelSize: 11
@@ -480,6 +485,7 @@ Rectangle {
           color: prevCalMa.containsMouse ? (root.tokens.card2 || "#1e1e24") : "transparent"
 
           Text {
+            textFormat: Text.PlainText
             anchors.centerIn: parent
             text: "‹"
             font.family: root.fontFamily
@@ -497,6 +503,7 @@ Rectangle {
         }
 
         Text {
+          textFormat: Text.PlainText
           anchors.centerIn: parent
           text: Theme.monthFull(root.calMonth, root.lang) + " " + root.calYear
           font.family: root.fontFamily
@@ -514,6 +521,7 @@ Rectangle {
           color: nextCalMa.containsMouse ? (root.tokens.card2 || "#1e1e24") : "transparent"
 
           Text {
+            textFormat: Text.PlainText
             anchors.centerIn: parent
             text: "›"
             font.family: root.fontFamily
@@ -536,6 +544,7 @@ Rectangle {
         Repeater {
           model: [1, 2, 3, 4, 5, 6, 7]
           delegate: Text {
+            textFormat: Text.PlainText
             required property int modelData
             width: mainCol.width / 7
             horizontalAlignment: Text.AlignHCenter
@@ -580,6 +589,7 @@ Rectangle {
                     : (dayCellMa.containsMouse ? (root.tokens.card2 || "#1e1e24") : "transparent"))
 
               Text {
+                textFormat: Text.PlainText
                 anchors.centerIn: parent
                 text: modelData.day > 0 ? String(modelData.day) : ""
                 font.family: root.fontFamily
@@ -640,6 +650,7 @@ Rectangle {
       spacing: 5
 
       Text {
+        textFormat: Text.PlainText
         anchors.verticalCenter: parent.verticalCenter
         width: 44
         text: Theme.t(root.lang, "Saat", "Time")
@@ -678,6 +689,7 @@ Rectangle {
         }
 
         Text {
+          textFormat: Text.PlainText
           visible: timeInput.text.length === 0
           anchors.verticalCenter: parent.verticalCenter
           anchors.left: parent.left
@@ -706,6 +718,7 @@ Rectangle {
             : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08))
 
           Text {
+            textFormat: Text.PlainText
             anchors.centerIn: parent
             text: modelData
             font.family: root.fontFamily
@@ -740,6 +753,7 @@ Rectangle {
         color: clrTmMa.containsMouse ? (root.tokens.raised || "#282830") : "transparent"
 
         Text {
+          textFormat: Text.PlainText
           anchors.centerIn: parent
           text: "✕"
           font.family: root.fontFamily
@@ -767,6 +781,7 @@ Rectangle {
       spacing: 4
 
       Text {
+        textFormat: Text.PlainText
         anchors.verticalCenter: parent.verticalCenter
         width: 44
         text: Theme.t(root.lang, "Tekrar", "Repeat")
@@ -797,6 +812,7 @@ Rectangle {
           border.color: active ? "transparent" : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08))
 
           Text {
+            textFormat: Text.PlainText
             id: recLbl
             anchors.centerIn: parent
             text: Theme.t(root.lang, modelData.tr, modelData.en)
@@ -823,6 +839,7 @@ Rectangle {
       spacing: 5
 
       Text {
+        textFormat: Text.PlainText
         anchors.verticalCenter: parent.verticalCenter
         width: 44
         text: Theme.t(root.lang, "Önem", "Priority")
@@ -865,6 +882,7 @@ Rectangle {
             }
 
             Text {
+              textFormat: Text.PlainText
               anchors.verticalCenter: parent.verticalCenter
               text: modelData.label
               font.family: root.fontFamily
@@ -887,6 +905,7 @@ Rectangle {
 
     // Subtle Todoist note when week/month/range is chosen on a Todoist task
     Text {
+      textFormat: Text.PlainText
       visible: root.isTodoist && (root.draftScope === "week" || root.draftScope === "month" || root.draftScope === "range")
       width: parent.width
       text: Theme.t(
@@ -906,6 +925,7 @@ Rectangle {
       height: 30
 
       Text {
+        textFormat: Text.PlainText
         anchors.left: parent.left
         anchors.right: actionBtns.left
         anchors.rightMargin: 8
@@ -932,6 +952,7 @@ Rectangle {
           border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.08)
 
           Text {
+            textFormat: Text.PlainText
             id: cancelLbl
             anchors.centerIn: parent
             text: Theme.t(root.lang, "İptal", "Cancel")
@@ -957,6 +978,7 @@ Rectangle {
           opacity: applyActMa.containsMouse ? 0.90 : 1.0
 
           Text {
+            textFormat: Text.PlainText
             id: applyLbl
             anchors.centerIn: parent
             text: Theme.t(root.lang, "Uygula", "Apply")

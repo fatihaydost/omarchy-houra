@@ -204,6 +204,7 @@ Item {
           spacing: 18
 
           Text {
+            textFormat: Text.PlainText
             anchors.horizontalCenter: parent.horizontalCenter
             text: Theme.t(root.lang, "MOLA", "BREAK")
             font.family: root.fontFamily
@@ -214,6 +215,7 @@ Item {
           }
 
           Text {
+            textFormat: Text.PlainText
             width: parent.width
             horizontalAlignment: Text.AlignHCenter
             // One line; shrinks to fit on narrow screens
@@ -227,6 +229,7 @@ Item {
           }
 
           Text {
+            textFormat: Text.PlainText
             width: Math.min(560, parent.width)
             anchors.horizontalCenter: parent.horizontalCenter
             horizontalAlignment: Text.AlignHCenter
@@ -244,6 +247,7 @@ Item {
           Item { width: 1; height: 12 }
 
           Text {
+            textFormat: Text.PlainText
             anchors.horizontalCenter: parent.horizontalCenter
             text: root.service ? root.service.restClockText : "05:00"
             font.family: "Monospace"
@@ -263,6 +267,7 @@ Item {
           spacing: 10
 
           Text {
+            textFormat: Text.PlainText
             anchors.horizontalCenter: parent.horizontalCenter
             opacity: root.showHoldHint || root.holding ? 1.0 : 0.0
             text: Theme.t(root.lang, "Erken çıkmak için 1.5 sn basılı tut", "Hold for 1.5s to exit early")
@@ -307,6 +312,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               id: emText
               anchors.centerIn: parent
               text: Theme.t(root.lang, "Acil durum", "Emergency")

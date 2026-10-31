@@ -269,6 +269,7 @@ Column {
       }
 
       Text {
+        textFormat: Text.PlainText
         visible: titleInput.text.length === 0
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
@@ -311,6 +312,7 @@ Column {
       }
 
       Text {
+        textFormat: Text.PlainText
         visible: detailInput.text.length === 0
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
@@ -330,6 +332,7 @@ Column {
       opacity: root.busy ? 0.5 : 1.0
 
       Text {
+        textFormat: Text.PlainText
         anchors.centerIn: parent
         text: root.busy ? "…" : "+"
         font.family: root.fontFamily
@@ -378,6 +381,7 @@ Column {
           : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08))
 
         Text {
+          textFormat: Text.PlainText
           id: hzChipTxt
           anchors.centerIn: parent
           text: Theme.t(root.lang, modelData.tr, modelData.en)
@@ -412,6 +416,7 @@ Column {
         : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08))
 
       Text {
+        textFormat: Text.PlainText
         id: calTrigTxt
         anchors.centerIn: parent
         text: root.customScheduleText
@@ -460,6 +465,7 @@ Column {
         border.color: active ? pCol : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08))
 
         Text {
+          textFormat: Text.PlainText
           anchors.centerIn: parent
           text: Theme.priorityLabel(modelData)
           font.family: root.fontFamily
@@ -507,6 +513,7 @@ Column {
         }
 
         Text {
+          textFormat: Text.PlainText
           anchors.verticalCenter: parent.verticalCenter
           text: {
             if (root.mode === "todoist" && (root.projects || []).length > 0) {

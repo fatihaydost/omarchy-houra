@@ -24,6 +24,7 @@ Rectangle {
   color: swatchColor || "#4c8df0"
 
   Text {
+    textFormat: Text.PlainText
     anchors.centerIn: parent
     visible: root.emoji !== ""
     text: root.emoji

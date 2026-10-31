@@ -408,6 +408,7 @@ Item {
         spacing: 4
 
         Text {
+          textFormat: Text.PlainText
           text: Theme.formatTodayEyebrow(root.lang)
           font.family: root.fontFamily
           font.pixelSize: 10
@@ -421,6 +422,7 @@ Item {
           height: 40
 
           Text {
+            textFormat: Text.PlainText
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
             text: Theme.formatMinutes(root.liveFocusMinutes, root.lang) + " " + Theme.t(root.lang, "odaklanıldı", "focused")
@@ -459,6 +461,7 @@ Item {
                 }
 
                 Text {
+                  textFormat: Text.PlainText
                   anchors.verticalCenter: parent.verticalCenter
                   text: (root.service ? root.service.clockText : "00:00") + " · " +
                         (root.service && root.service.phase === "paused"
@@ -481,6 +484,7 @@ Item {
                 : (root.tokens.primaryBg || "#ffffff")
 
               Text {
+                textFormat: Text.PlainText
                 id: todayFinishLbl
                 anchors.centerIn: parent
                 text: Theme.t(root.lang, "Oturumu bitir", "Finish session")
@@ -511,6 +515,7 @@ Item {
               border.color: root.tokens.lineStrong || Qt.rgba(1, 1, 1, 0.14)
 
               Text {
+                textFormat: Text.PlainText
                 id: todayCloseNoBreakLbl
                 anchors.centerIn: parent
                 text: Theme.t(root.lang, "Molasız kapat", "Close & save")
@@ -551,6 +556,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 id: todayCancelLbl
                 anchors.centerIn: parent
                 text: todayCancelBtn.confirming
@@ -627,6 +633,7 @@ Item {
               spacing: 4
 
               Text {
+                textFormat: Text.PlainText
                 text: modelData.title
                 font.family: root.fontFamily
                 font.pixelSize: 11
@@ -634,6 +641,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 width: parent.width
                 elide: Text.ElideRight
                 text: modelData.value
@@ -644,6 +652,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 text: modelData.sub
                 font.family: root.fontFamily
                 font.pixelSize: 10
@@ -687,6 +696,7 @@ Item {
                 height: 20
 
                 Text {
+                  textFormat: Text.PlainText
                   anchors.left: parent.left
                   anchors.verticalCenter: parent.verticalCenter
                   text: root._horizonHeading()
@@ -703,6 +713,7 @@ Item {
                   spacing: 8
 
                   Text {
+                    textFormat: Text.PlainText
                     visible: root.visibleLocalTodos.length > 0
                     anchors.verticalCenter: parent.verticalCenter
                     text: root.localHorizonTab === "today"
@@ -714,6 +725,7 @@ Item {
                   }
 
                   Text {
+                    textFormat: Text.PlainText
                     anchors.verticalCenter: parent.verticalCenter
                     text: "🤓 → 🙂‍↔️ → 🥳"
                     font.pixelSize: 11
@@ -755,6 +767,7 @@ Item {
                       spacing: 5
 
                       Text {
+                        textFormat: Text.PlainText
                         anchors.verticalCenter: parent.verticalCenter
                         text: Theme.t(root.lang, modelData.tr, modelData.en)
                         font.family: root.fontFamily
@@ -774,6 +787,7 @@ Item {
                           : (active ? (root.tokens.card2 || "#1f1f25") : Theme.withAlpha(root.tokens.ink || "#ffffff", 0.07))
 
                         Text {
+                          textFormat: Text.PlainText
                           id: cntTxt
                           anchors.centerIn: parent
                           text: String(cnt)
@@ -802,6 +816,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 visible: root.visibleLocalTodos.length === 0
                 text: root._horizonEmptyText()
                 font.family: root.fontFamily
@@ -866,6 +881,7 @@ Item {
                         border.color: todoRowRect.prioCol
 
                         Text {
+                          textFormat: Text.PlainText
                           anchors.centerIn: parent
                           text: Theme.todoEmoji(st)
                           font.pixelSize: 15
@@ -887,6 +903,7 @@ Item {
                         spacing: 3
 
                         Text {
+                          textFormat: Text.PlainText
                           width: parent.width
                           text: td.title || ""
                           wrapMode: Text.WordWrap
@@ -898,6 +915,7 @@ Item {
                         }
 
                         Text {
+                          textFormat: Text.PlainText
                           visible: (td.detail || "").length > 0
                           width: parent.width
                           text: td.detail || ""
@@ -926,6 +944,7 @@ Item {
                             border.color: Theme.withAlpha(todoRowRect.prioCol, 0.55)
 
                             Text {
+                              textFormat: Text.PlainText
                               id: pBadgeTxt
                               anchors.centerIn: parent
                               text: Theme.priorityLabel(todoRowRect.prio)
@@ -968,6 +987,7 @@ Item {
                               : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08))
 
                             Text {
+                              textFormat: Text.PlainText
                               id: schedBadgeTxt
                               anchors.centerIn: parent
                               text: todoRowRect.metaScheduleSummary
@@ -1021,6 +1041,7 @@ Item {
                               }
 
                               Text {
+                                textFormat: Text.PlainText
                                 anchors.verticalCenter: parent.verticalCenter
                                 text: td.categoryName || ""
                                 font.family: root.fontFamily
@@ -1045,6 +1066,7 @@ Item {
                               : Theme.withAlpha("#e44332", todayTdCompleteArea.containsMouse ? 0.65 : 0.35)
 
                             Text {
+                              textFormat: Text.PlainText
                               id: tdOriginTxt
                               anchors.centerIn: parent
                               text: parent.tdDone
@@ -1085,6 +1107,7 @@ Item {
                           color: editSchedMa.containsMouse ? (root.tokens.raised || "#2b2b33") : "transparent"
 
                           Text {
+                            textFormat: Text.PlainText
                             anchors.centerIn: parent
                             text: "🗓"
                             font.pixelSize: 11
@@ -1120,6 +1143,7 @@ Item {
                           color: startTodoSessMa.containsMouse ? (root.tokens.raised || "#2b2b33") : "transparent"
 
                           Text {
+                            textFormat: Text.PlainText
                             anchors.centerIn: parent
                             text: "▶"
                             font.pixelSize: 10
@@ -1143,6 +1167,7 @@ Item {
                           color: delHov.containsMouse ? (root.tokens.raised || "#2b2b33") : "transparent"
 
                           Text {
+                            textFormat: Text.PlainText
                             anchors.centerIn: parent
                             text: "×"
                             font.pixelSize: 14
@@ -1221,6 +1246,7 @@ Item {
                   spacing: 8
 
                   Text {
+                    textFormat: Text.PlainText
                     anchors.verticalCenter: parent.verticalCenter
                     text: "TODOIST"
                     font.family: root.fontFamily
@@ -1231,6 +1257,7 @@ Item {
                   }
 
                   Text {
+                    textFormat: Text.PlainText
                     anchors.verticalCenter: parent.verticalCenter
                     text: root.todoist.filter || "today | overdue"
                     font.family: "Monospace"
@@ -1245,6 +1272,7 @@ Item {
                   spacing: 6
 
                   Text {
+                    textFormat: Text.PlainText
                     anchors.verticalCenter: parent.verticalCenter
                     text: (root.service && root.service.todoistSyncing)
                       ? Theme.t(root.lang, "eşitleniyor…", "syncing…")
@@ -1262,6 +1290,7 @@ Item {
                     color: tdSyncBtnArea.containsMouse ? (root.tokens.raised || "#2b2b33") : "transparent"
 
                     Text {
+                      textFormat: Text.PlainText
                       anchors.centerIn: parent
                       text: "↻"
                       font.pixelSize: 13
@@ -1309,6 +1338,7 @@ Item {
                       : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08))
 
                     Text {
+                      textFormat: Text.PlainText
                       id: tdFiltTxt
                       anchors.centerIn: parent
                       text: Theme.t(root.lang, modelData.tr, modelData.en)
@@ -1332,6 +1362,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 visible: (root.todoist.error || "") !== ""
                 width: parent.width
                 wrapMode: Text.WordWrap
@@ -1342,6 +1373,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 visible: root.todoistNoticeText !== "" && (root.todoist.error || "") === ""
                 width: parent.width
                 wrapMode: Text.WordWrap
@@ -1352,6 +1384,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 visible: (root.todoist.error || "") === "" && root.todoistGroups.length === 0
                 width: parent.width
                 wrapMode: Text.WordWrap
@@ -1402,6 +1435,7 @@ Item {
                       }
 
                       Text {
+                        textFormat: Text.PlainText
                         anchors.verticalCenter: parent.verticalCenter
                         text: grp.name || ""
                         font.family: root.fontFamily
@@ -1412,6 +1446,7 @@ Item {
                     }
 
                     Text {
+                      textFormat: Text.PlainText
                       anchors.right: parent.right
                       anchors.verticalCenter: parent.verticalCenter
                       text: String(grp.tasks ? grp.tasks.length : 0)
@@ -1478,6 +1513,7 @@ Item {
                           border.color: tdistCompleteArea.containsMouse ? "#4fc08d" : ringColor
 
                           Text {
+                            textFormat: Text.PlainText
                             visible: tdistCompleteArea.containsMouse
                             anchors.centerIn: parent
                             text: "✓"
@@ -1501,6 +1537,7 @@ Item {
                         }
 
                         Text {
+                          textFormat: Text.PlainText
                           id: tdistTitleTxt
                           width: Math.max(60, parent.width - 28)
                           anchors.verticalCenter: parent.verticalCenter
@@ -1530,6 +1567,7 @@ Item {
                           border.color: Theme.withAlpha(tdistRow.prioCol, 0.50)
 
                           Text {
+                            textFormat: Text.PlainText
                             id: tdPrioBadgeTxt
                             anchors.centerIn: parent
                             text: Theme.priorityLabel(tdistRow.prio)
@@ -1541,6 +1579,7 @@ Item {
                         }
 
                         Text {
+                          textFormat: Text.PlainText
                           visible: (tdistRow.tdist.dueLabel || "").length > 0
                           anchors.verticalCenter: parent.verticalCenter
                           text: (tdistRow.tdist.isRecurring ? "↻ " : "") + (tdistRow.tdist.dueLabel || "")
@@ -1561,6 +1600,7 @@ Item {
                           color: tdEditSchedMa.containsMouse ? (root.tokens.raised || "#2b2b33") : "transparent"
 
                           Text {
+                            textFormat: Text.PlainText
                             anchors.centerIn: parent
                             text: "🗓"
                             font.pixelSize: 11
@@ -1589,6 +1629,7 @@ Item {
                         }
 
                         Text {
+                          textFormat: Text.PlainText
                           visible: tdistRow.alreadyInToday
                           anchors.verticalCenter: parent.verticalCenter
                           text: "✓"
@@ -1605,6 +1646,7 @@ Item {
                           color: pullTodayArea.containsMouse ? (root.tokens.raised || "#2b2b33") : "transparent"
 
                           Text {
+                            textFormat: Text.PlainText
                             anchors.centerIn: parent
                             text: "+"
                             font.pixelSize: 14
@@ -1621,6 +1663,7 @@ Item {
                         }
 
                         Text {
+                          textFormat: Text.PlainText
                           visible: tdistHover.hovered || tdistRow.kbSelected
                           anchors.verticalCenter: parent.verticalCenter
                           text: "▶"
@@ -1697,6 +1740,7 @@ Item {
                 height: 18
 
                 Text {
+                  textFormat: Text.PlainText
                   anchors.left: parent.left
                   anchors.verticalCenter: parent.verticalCenter
                   text: Theme.t(root.lang, "BU HAFTA", "THIS WEEK")
@@ -1708,6 +1752,7 @@ Item {
                 }
 
                 Text {
+                  textFormat: Text.PlainText
                   visible: !!root.weekly.exists
                   anchors.right: parent.right
                   anchors.verticalCenter: parent.verticalCenter
@@ -1719,6 +1764,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 visible: !root.weekly.exists
                 width: parent.width
                 wrapMode: Text.WordWrap
@@ -1733,6 +1779,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 visible: !!root.weekly.exists && root.weeklyGroups.length === 0
                 width: parent.width
                 wrapMode: Text.WordWrap
@@ -1783,6 +1830,7 @@ Item {
                       }
 
                       Text {
+                        textFormat: Text.PlainText
                         anchors.verticalCenter: parent.verticalCenter
                         text: grp.name || ""
                         font.family: root.fontFamily
@@ -1793,6 +1841,7 @@ Item {
                     }
 
                     Text {
+                      textFormat: Text.PlainText
                       anchors.right: parent.right
                       anchors.verticalCenter: parent.verticalCenter
                       text: String(grp.tasks ? grp.tasks.length : 0)
@@ -1817,6 +1866,7 @@ Item {
                       spacing: 2
 
                       Text {
+                        textFormat: Text.PlainText
                         visible: showSubHeader
                         leftPadding: 6
                         topPadding: 3
@@ -1849,6 +1899,7 @@ Item {
                           spacing: 7
 
                           Text {
+                            textFormat: Text.PlainText
                             anchors.verticalCenter: parent.verticalCenter
                             text: wt.waiting ? "◌" : "○"
                             font.pixelSize: 12
@@ -1856,6 +1907,7 @@ Item {
                           }
 
                           Text {
+                            textFormat: Text.PlainText
                             id: wtTitleTxt
                             width: Math.max(60, parent.width - ((wkRowArea.containsMouse || wkRowRect.kbSelected) ? 48 : 22))
                             anchors.verticalCenter: parent.verticalCenter
@@ -1867,6 +1919,7 @@ Item {
                           }
 
                           Text {
+                            textFormat: Text.PlainText
                             visible: wkRowArea.containsMouse || wkRowRect.kbSelected
                             anchors.verticalCenter: parent.verticalCenter
                             text: "▶"
@@ -1914,6 +1967,7 @@ Item {
               height: 18
 
               Text {
+                textFormat: Text.PlainText
                 anchors.left: parent.left
                 anchors.verticalCenter: parent.verticalCenter
                 text: Theme.t(root.lang, "GÜN AKIŞI", "DAY FLOW")
@@ -1925,6 +1979,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 visible: !root.hasActive && root.timeline.length === 0
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter

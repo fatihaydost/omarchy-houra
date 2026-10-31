@@ -201,6 +201,7 @@ Item {
         spacing: 4
 
         Text {
+          textFormat: Text.PlainText
           text: Theme.t(root.lang, "TERCİHLER", "PREFERENCES")
           font.family: root.fontFamily
           font.pixelSize: 10
@@ -210,6 +211,7 @@ Item {
         }
 
         Text {
+          textFormat: Text.PlainText
           text: Theme.t(root.lang, "Ayarlar", "Settings")
           font.family: root.fontFamily
           font.pixelSize: 26
@@ -236,6 +238,7 @@ Item {
           spacing: 14
 
           Text {
+            textFormat: Text.PlainText
             text: Theme.t(root.lang, "OMARCHY & SİSTEM UYUMU", "OMARCHY & SYSTEM INTEGRATION")
             font.family: root.fontFamily
             font.pixelSize: 10
@@ -257,6 +260,7 @@ Item {
               spacing: 2
 
               Text {
+                textFormat: Text.PlainText
                 text: Theme.t(root.lang, "Görünüm teması", "Appearance theme")
                 font.family: root.fontFamily
                 font.pixelSize: 13
@@ -265,6 +269,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 width: parent.width
                 elide: Text.ElideRight
                 text: Theme.t(
@@ -299,6 +304,7 @@ Item {
                   border.color: active ? "transparent" : (root.tokens.line || Qt.rgba(1, 1, 1, 0.1))
 
                   Text {
+                    textFormat: Text.PlainText
                     id: tmLbl
                     anchors.centerIn: parent
                     text: modelData.label
@@ -333,6 +339,7 @@ Item {
               spacing: 2
 
               Text {
+                textFormat: Text.PlainText
                 text: Theme.t(root.lang, "Odak sırasında Rahatsız Etme (DND)", "Do Not Disturb during focus")
                 font.family: root.fontFamily
                 font.pixelSize: 13
@@ -341,6 +348,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 width: parent.width
                 elide: Text.ElideRight
                 text: Theme.t(
@@ -408,6 +416,7 @@ Item {
             height: 30
 
             Text {
+              textFormat: Text.PlainText
               anchors.left: parent.left
               anchors.verticalCenter: parent.verticalCenter
               text: Theme.t(root.lang, "Dil", "Language")
@@ -436,6 +445,7 @@ Item {
                   color: active ? (root.tokens.primaryBg || "#ffffff") : (root.tokens.card2 || "#1f1f25")
 
                   Text {
+                    textFormat: Text.PlainText
                     id: langLbl
                     anchors.centerIn: parent
                     text: modelData.label
@@ -463,6 +473,7 @@ Item {
             spacing: 8
 
             Text {
+              textFormat: Text.PlainText
               text: Theme.t(root.lang, "Ekranda göster", "Show on screen")
               font.family: root.fontFamily
               font.pixelSize: 13
@@ -491,6 +502,7 @@ Item {
                   color: active ? (root.tokens.primaryBg || "#ffffff") : (root.tokens.card2 || "#1f1f25")
 
                   Text {
+                    textFormat: Text.PlainText
                     id: wsTxt
                     anchors.centerIn: parent
                     text: modelData.label
@@ -534,6 +546,7 @@ Item {
             height: 26
 
             Text {
+              textFormat: Text.PlainText
               anchors.left: parent.left
               anchors.verticalCenter: parent.verticalCenter
               text: Theme.t(root.lang, "Haftalık görevler (Markdown)", "Weekly tasks (Markdown)")
@@ -572,6 +585,7 @@ Item {
           }
 
           Text {
+            textFormat: Text.PlainText
             width: parent.width
             wrapMode: Text.WordWrap
             text: Theme.t(
@@ -595,6 +609,7 @@ Item {
               : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08))
 
             Text {
+              textFormat: Text.PlainText
               anchors.left: parent.left
               anchors.leftMargin: 10
               anchors.verticalCenter: parent.verticalCenter
@@ -638,6 +653,7 @@ Item {
               border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.1)
 
               Text {
+                textFormat: Text.PlainText
                 id: chooseFolderLbl
                 anchors.centerIn: parent
                 text: Theme.t(root.lang, "Klasör seç…", "Choose folder…")
@@ -664,6 +680,7 @@ Item {
               border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.1)
 
               Text {
+                textFormat: Text.PlainText
                 id: chooseFileLbl
                 anchors.centerIn: parent
                 text: Theme.t(root.lang, "Dosya seç…", "Choose file…")
@@ -690,6 +707,7 @@ Item {
               border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.1)
 
               Text {
+                textFormat: Text.PlainText
                 id: saveWkLbl
                 anchors.centerIn: parent
                 text: Theme.t(root.lang, "Şimdi yenile", "Refresh now")
@@ -709,6 +727,7 @@ Item {
           }
 
           Text {
+            textFormat: Text.PlainText
             visible: !!root.settings.weeklyOn && String(root.settings.weeklyTemplate || "").trim().length > 0
             text: root.weekly.exists
               ? (Theme.t(root.lang, "Bu hafta: ", "This week: ") + root.weekly.fileName + " · " + root.weekly.openCount + " " + Theme.t(root.lang, "açık görev", "open tasks"))
@@ -748,6 +767,7 @@ Item {
               spacing: 8
 
               Text {
+                textFormat: Text.PlainText
                 anchors.verticalCenter: parent.verticalCenter
                 text: "Todoist"
                 font.family: root.fontFamily
@@ -777,6 +797,7 @@ Item {
                     : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08)))
 
                 Text {
+                  textFormat: Text.PlainText
                   id: tdConnLbl
                   width: Math.min(326, implicitWidth)
                   anchors.centerIn: parent
@@ -844,6 +865,7 @@ Item {
             height: Math.max(30, tdHelpTxt.implicitHeight)
 
             Text {
+              textFormat: Text.PlainText
               id: tdHelpTxt
               anchors.left: parent.left
               anchors.right: openTdWebBtn.left
@@ -874,6 +896,7 @@ Item {
               border.color: Theme.withAlpha("#e44332", openTdWebArea.containsMouse ? 0.60 : 0.38)
 
               Text {
+                textFormat: Text.PlainText
                 id: openTdWebLbl
                 anchors.centerIn: parent
                 text: Theme.t(root.lang, "Todoist API sayfasını aç ↗", "Open Todoist API page ↗")
@@ -909,6 +932,7 @@ Item {
                 : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08))
 
               Text {
+                textFormat: Text.PlainText
                 anchors.left: parent.left
                 anchors.leftMargin: 10
                 anchors.right: tdInlineBtns.left
@@ -957,6 +981,7 @@ Item {
                   color: showTdKeyArea.containsMouse ? (root.tokens.raised || "#2b2b33") : "transparent"
 
                   Text {
+                    textFormat: Text.PlainText
                     id: showTdKeyLbl
                     anchors.centerIn: parent
                     text: root.revealTodoistToken
@@ -985,6 +1010,7 @@ Item {
                     : Theme.withAlpha(root.tokens.ink || "#ffffff", 0.05)
 
                   Text {
+                    textFormat: Text.PlainText
                     id: pasteTdKeyLbl
                     anchors.centerIn: parent
                     text: Theme.t(root.lang, "Yapıştır", "Paste")
@@ -1022,6 +1048,7 @@ Item {
                 : (root.tokens.primaryBg || "#ffffff")
 
               Text {
+                textFormat: Text.PlainText
                 id: saveTdLbl
                 anchors.centerIn: parent
                 text: root.todoist.hasToken
@@ -1057,6 +1084,7 @@ Item {
                 : (root.tokens.line || Qt.rgba(1, 1, 1, 0.1))
 
               Text {
+                textFormat: Text.PlainText
                 id: disconnectTdLbl
                 anchors.centerIn: parent
                 text: Theme.t(root.lang, "Bağlantıyı kes", "Disconnect")
@@ -1089,6 +1117,7 @@ Item {
               height: 26
 
               Text {
+                textFormat: Text.PlainText
                 anchors.left: parent.left
                 anchors.verticalCenter: parent.verticalCenter
                 text: Theme.t(root.lang, "Görev filtresi", "Task filter")
@@ -1119,6 +1148,7 @@ Item {
                     border.color: active ? "transparent" : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08))
 
                     Text {
+                      textFormat: Text.PlainText
                       id: presetLbl
                       anchors.centerIn: parent
                       text: modelData.label
@@ -1156,6 +1186,7 @@ Item {
                   : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08))
 
                 Text {
+                  textFormat: Text.PlainText
                   anchors.left: parent.left
                   anchors.leftMargin: 10
                   anchors.verticalCenter: parent.verticalCenter
@@ -1194,6 +1225,7 @@ Item {
                 border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.1)
 
                 Text {
+                  textFormat: Text.PlainText
                   id: syncTdLbl
                   anchors.centerIn: parent
                   text: (root.service && root.service.todoistSyncing)
@@ -1218,6 +1250,7 @@ Item {
           Rectangle { width: parent.width; height: 1; color: root.tokens.line || Qt.rgba(1, 1, 1, 0.08) }
 
           Text {
+            textFormat: Text.PlainText
             width: parent.width
             wrapMode: Text.WordWrap
             text: Theme.t(
@@ -1231,6 +1264,7 @@ Item {
           }
 
           Text {
+            textFormat: Text.PlainText
             visible: ((root.todoist.error || "") !== "") || (!!root.settings.todoistOn && !!root.todoist.hasToken)
             width: parent.width
             wrapMode: Text.WordWrap
@@ -1266,6 +1300,7 @@ Item {
           spacing: 10
 
           Text {
+            textFormat: Text.PlainText
             text: Theme.t(root.lang, "YEREL VERİ", "LOCAL DATA")
             font.family: root.fontFamily
             font.pixelSize: 10
@@ -1309,6 +1344,7 @@ Item {
               border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.1)
 
               Text {
+                textFormat: Text.PlainText
                 id: openDirLbl
                 anchors.centerIn: parent
                 text: Theme.t(root.lang, "Klasörü aç", "Open folder")
@@ -1335,6 +1371,7 @@ Item {
               border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.1)
 
               Text {
+                textFormat: Text.PlainText
                 id: expLbl
                 anchors.centerIn: parent
                 text: Theme.t(root.lang, "CSV olarak dışa aktar…", "Export as CSV…")
@@ -1354,6 +1391,7 @@ Item {
           }
 
           Text {
+            textFormat: Text.PlainText
             visible: root.service && root.service.lastCsvStatus !== ""
             text: root.service ? root.service.lastCsvStatus : ""
             font.family: root.fontFamily
@@ -1365,6 +1403,7 @@ Item {
 
       // Version footer matching Panel.swift:713
       Text {
+        textFormat: Text.PlainText
         text: "Houra 1.0"
         font.family: root.fontFamily
         font.pixelSize: 11

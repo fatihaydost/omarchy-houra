@@ -502,6 +502,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 anchors.verticalCenter: parent.verticalCenter
                 text: (root.activeCat ? root.activeCat.name : "").toUpperCase()
                 font.family: root.fontFamily
@@ -513,6 +514,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               anchors.right: parent.right
               anchors.verticalCenter: parent.verticalCenter
               text: root.service ? root.service.clockText : "50:00"
@@ -528,6 +530,7 @@ Item {
             spacing: 2
 
             Text {
+              textFormat: Text.PlainText
               width: parent.width
               wrapMode: Text.WordWrap
               text: {
@@ -541,6 +544,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               width: parent.width
               text: Theme.t(root.lang, "Mola isteğe bağlı.", "The break is optional.")
               font.family: root.fontFamily
@@ -562,6 +566,7 @@ Item {
               border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.12)
 
               Text {
+                textFormat: Text.PlainText
                 anchors.centerIn: parent
                 text: Theme.t(root.lang, "Devam et", "Keep going")
                 font.family: root.fontFamily
@@ -588,6 +593,7 @@ Item {
                 : root.accentInk
 
               Text {
+                textFormat: Text.PlainText
                 anchors.centerIn: parent
                 text: Theme.t(root.lang, "Mola ver", "Take a break")
                 font.family: root.fontFamily
@@ -666,6 +672,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 anchors.verticalCenter: parent.verticalCenter
                 text: (root.activeCat ? root.activeCat.name : "").toUpperCase()
                 font.family: root.fontFamily
@@ -677,6 +684,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               width: parent.width
               text: root.headline
               elide: Text.ElideRight
@@ -688,6 +696,7 @@ Item {
           }
 
           Text {
+            textFormat: Text.PlainText
             id: tagClockTxt
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
@@ -774,6 +783,7 @@ Item {
             spacing: 1
 
             Text {
+              textFormat: Text.PlainText
               id: stripClockTxt
               width: parent.width
               horizontalAlignment: root.onLeft ? Text.AlignLeft : Text.AlignRight
@@ -785,6 +795,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               id: stripHeadTxt
               width: parent.width
               horizontalAlignment: root.onLeft ? Text.AlignLeft : Text.AlignRight
@@ -821,6 +832,7 @@ Item {
             spacing: 3
 
             Text {
+              textFormat: Text.PlainText
               width: parent.width
               text: root.headline
               elide: Text.ElideRight
@@ -844,6 +856,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 width: parent.width - 16
                 anchors.verticalCenter: parent.verticalCenter
                 text: root.capsuleSubtitle
@@ -856,6 +869,7 @@ Item {
           }
 
           Text {
+            textFormat: Text.PlainText
             width: 68
             horizontalAlignment: Text.AlignRight
             anchors.verticalCenter: parent.verticalCenter
@@ -996,6 +1010,7 @@ Item {
               spacing: 2
 
               Text {
+                textFormat: Text.PlainText
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: root.service ? root.service.clockText : "00:00"
                 font.family: "Monospace"
@@ -1005,6 +1020,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 visible: !!root.service && root.service.phase === "paused"
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: Theme.t(root.lang, "DURAKLATILDI", "PAUSED")
@@ -1018,6 +1034,7 @@ Item {
           }
 
           Text {
+            textFormat: Text.PlainText
             width: parent.width
             horizontalAlignment: Text.AlignHCenter
             text: root.headline
@@ -1072,6 +1089,7 @@ Item {
         }
 
         Text {
+          textFormat: Text.PlainText
           anchors.centerIn: parent
           text: root.service ? root.service.clockText : "00:00"
           font.family: "Monospace"

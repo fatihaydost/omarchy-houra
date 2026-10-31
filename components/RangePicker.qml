@@ -154,6 +154,7 @@ Rectangle {
           border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.1)
 
           Text {
+            textFormat: Text.PlainText
             anchors.centerIn: parent
             text: modelData.label
             font.family: root.fontFamily
@@ -196,6 +197,7 @@ Rectangle {
             spacing: 1
 
             Text {
+              textFormat: Text.PlainText
               anchors.horizontalCenter: parent.horizontalCenter
               text: modelData.title
               font.family: root.fontFamily
@@ -204,6 +206,7 @@ Rectangle {
             }
 
             Text {
+              textFormat: Text.PlainText
               anchors.horizontalCenter: parent.horizontalCenter
               text: Theme.formatShortDay(modelData.val, root.lang)
               font.family: root.fontFamily
@@ -238,11 +241,12 @@ Rectangle {
         height: 24
         radius: 6
         color: root.tokens.card2 || "#1f1f25"
-        Text { anchors.centerIn: parent; text: "‹"; font.pixelSize: 14; color: root.tokens.ink || "#ffffff" }
+        Text { textFormat: Text.PlainText; anchors.centerIn: parent; text: "‹"; font.pixelSize: 14; color: root.tokens.ink || "#ffffff" }
         MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: root.stepMonth(-1) }
       }
 
       Text {
+        textFormat: Text.PlainText
         anchors.centerIn: parent
         text: Theme.monthFull(root.calMonth, root.lang) + " " + root.calYear
         font.family: root.fontFamily
@@ -257,7 +261,7 @@ Rectangle {
         height: 24
         radius: 6
         color: root.tokens.card2 || "#1f1f25"
-        Text { anchors.centerIn: parent; text: "›"; font.pixelSize: 14; color: root.tokens.ink || "#ffffff" }
+        Text { textFormat: Text.PlainText; anchors.centerIn: parent; text: "›"; font.pixelSize: 14; color: root.tokens.ink || "#ffffff" }
         MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: root.stepMonth(1) }
       }
     }
@@ -271,6 +275,7 @@ Rectangle {
       Repeater {
         model: [1, 2, 3, 4, 5, 6, 7]
         delegate: Text {
+          textFormat: Text.PlainText
           width: (col.width - 18) / 7
           horizontalAlignment: Text.AlignHCenter
           text: Theme.weekdayShort(modelData, root.lang)
@@ -296,6 +301,7 @@ Rectangle {
                 : (inSpan ? (root.tokens.raised || "#2a2a32") : "transparent"))
 
           Text {
+            textFormat: Text.PlainText
             visible: cell.day > 0
             anchors.centerIn: parent
             text: String(cell.day)
@@ -330,6 +336,7 @@ Rectangle {
       height: 28
 
       Text {
+        textFormat: Text.PlainText
         anchors.left: parent.left
         anchors.verticalCenter: parent.verticalCenter
         text: root.draftSpanDays + " " + Theme.t(root.lang, "gün seçili", "days selected")
@@ -349,6 +356,7 @@ Rectangle {
           radius: 7
           color: root.tokens.card2 || "#1f1f25"
           Text {
+            textFormat: Text.PlainText
             anchors.centerIn: parent
             text: Theme.t(root.lang, "İptal", "Cancel")
             font.family: root.fontFamily
@@ -368,6 +376,7 @@ Rectangle {
           radius: 7
           color: root.tokens.primaryBg || "#ffffff"
           Text {
+            textFormat: Text.PlainText
             anchors.centerIn: parent
             text: Theme.t(root.lang, "Uygula", "Apply")
             font.family: root.fontFamily

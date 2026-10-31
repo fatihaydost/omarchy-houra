@@ -314,6 +314,7 @@ Item {
           }
 
           Text {
+            textFormat: Text.PlainText
             anchors.verticalCenter: parent.verticalCenter
             text: root.category ? root.category.name : ""
             font.family: root.fontFamily
@@ -332,6 +333,7 @@ Item {
           color: root.tokens.primaryBg || "#ffffff"
 
           Text {
+            textFormat: Text.PlainText
             id: doneLabel
             anchors.centerIn: parent
             text: Theme.t(root.lang, "Tamam", "Done")
@@ -355,6 +357,7 @@ Item {
         spacing: 8
 
         Text {
+          textFormat: Text.PlainText
           text: Theme.t(root.lang, "RENK", "COLOUR")
           font.family: root.fontFamily
           font.pixelSize: 10
@@ -454,6 +457,7 @@ Item {
             border.color: active ? (root.tokens.lineStrong || Qt.rgba(1, 1, 1, 0.2)) : "transparent"
 
             Text {
+              textFormat: Text.PlainText
               anchors.centerIn: parent
               text: modelData.label
               font.family: root.fontFamily
@@ -481,6 +485,7 @@ Item {
           border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.1)
 
           Text {
+            textFormat: Text.PlainText
             id: clearLbl
             anchors.centerIn: parent
             text: "∅ " + Theme.t(root.lang, "Sembol yok", "No symbol")
@@ -519,6 +524,7 @@ Item {
             : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08))
 
           Text {
+            textFormat: Text.PlainText
             anchors.left: parent.left
             anchors.leftMargin: 10
             anchors.verticalCenter: parent.verticalCenter
@@ -616,6 +622,7 @@ Item {
           spacing: 6
 
           Text {
+            textFormat: Text.PlainText
             text: Theme.t(root.lang, "İKON RENGİ", "ICON COLOUR")
             font.family: root.fontFamily
             font.pixelSize: 10
@@ -638,6 +645,7 @@ Item {
               border.color: autoOn ? (root.tokens.ink || "#ffffff") : (root.tokens.line || Qt.rgba(1, 1, 1, 0.1))
 
               Text {
+                textFormat: Text.PlainText
                 id: autoTxt
                 anchors.centerIn: parent
                 text: Theme.t(root.lang, "Otomatik", "Auto")
@@ -690,6 +698,7 @@ Item {
               border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.1)
 
               Text {
+                textFormat: Text.PlainText
                 anchors.left: parent.left
                 anchors.leftMargin: 6
                 anchors.verticalCenter: parent.verticalCenter
@@ -730,6 +739,7 @@ Item {
         }
 
         Text {
+          textFormat: Text.PlainText
           text: Theme.t(root.lang, "Phosphor ikonları · MIT lisansı", "Phosphor icons · MIT licence")
           font.family: root.fontFamily
           font.pixelSize: 10
@@ -752,6 +762,7 @@ Item {
           border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.1)
 
           Text {
+            textFormat: Text.PlainText
             anchors.left: parent.left
             anchors.leftMargin: 10
             anchors.verticalCenter: parent.verticalCenter
@@ -811,6 +822,7 @@ Item {
                 border.color: (picked || kbCur) ? (root.tokens.ink || "#ffffff") : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08))
 
                 Text {
+                  textFormat: Text.PlainText
                   anchors.centerIn: parent
                   text: parent.em
                   font.pixelSize: 17

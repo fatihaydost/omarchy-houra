@@ -112,6 +112,7 @@ Item {
         height: 26
 
         Text {
+          textFormat: Text.PlainText
           anchors.left: parent.left
           anchors.verticalCenter: parent.verticalCenter
           text: root.service && root.service.phase === "paused"
@@ -150,6 +151,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               anchors.verticalCenter: parent.verticalCenter
               text: root.activeCat ? root.activeCat.name : ""
               font.family: root.fontFamily
@@ -167,6 +169,7 @@ Item {
         spacing: 4
 
         Text {
+          textFormat: Text.PlainText
           width: parent.width
           text: {
             if (!root.service) return ""
@@ -187,6 +190,7 @@ Item {
         spacing: 12
 
         Text {
+          textFormat: Text.PlainText
           id: heroClock
           text: root.service ? root.service.clockText : "00:00"
           font.family: "Monospace"
@@ -196,6 +200,7 @@ Item {
         }
 
         Text {
+          textFormat: Text.PlainText
           width: parent.width - heroClock.width - 12
           anchors.verticalCenter: parent.verticalCenter
           wrapMode: Text.WordWrap
@@ -251,6 +256,7 @@ Item {
           border.color: root.tokens.lineStrong || Qt.rgba(1, 1, 1, 0.14)
 
           Text {
+            textFormat: Text.PlainText
             anchors.centerIn: parent
             text: root.service && root.service.phase === "paused"
               ? Theme.t(root.lang, "Devam et", "Resume")
@@ -280,6 +286,7 @@ Item {
             : (root.tokens.primaryBg || "#ffffff")
 
           Text {
+            textFormat: Text.PlainText
             anchors.centerIn: parent
             text: Theme.t(root.lang, "Oturumu bitir", "Finish session")
             font.family: root.fontFamily
@@ -319,6 +326,7 @@ Item {
             border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.10)
 
             Text {
+              textFormat: Text.PlainText
               anchors.centerIn: parent
               width: parent.width - 8
               horizontalAlignment: Text.AlignHCenter
@@ -352,6 +360,7 @@ Item {
               : (root.tokens.line || Qt.rgba(1, 1, 1, 0.07))
 
             Text {
+              textFormat: Text.PlainText
               anchors.centerIn: parent
               width: parent.width - 8
               horizontalAlignment: Text.AlignHCenter
@@ -393,6 +402,7 @@ Item {
             border.color: root.tokens.danger || "#e06458"
 
             Text {
+              textFormat: Text.PlainText
               anchors.centerIn: parent
               text: Theme.t(root.lang, "Kaydetmeden iptal et", "Discard without saving")
               font.family: root.fontFamily
@@ -425,6 +435,7 @@ Item {
             border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.10)
 
             Text {
+              textFormat: Text.PlainText
               anchors.centerIn: parent
               text: Theme.t(root.lang, "Vazgeç", "Keep")
               font.family: root.fontFamily
@@ -463,6 +474,7 @@ Item {
           height: 16
 
           Text {
+            textFormat: Text.PlainText
             anchors.left: parent.left
             text: Theme.t(root.lang, "YAPILACAKLAR", "TO-DO")
             font.family: root.fontFamily
@@ -473,6 +485,7 @@ Item {
           }
 
           Text {
+            textFormat: Text.PlainText
             visible: root.sessionTodos.length > 0
             anchors.right: parent.right
             text: root.doneSessionTodos + "/" + root.sessionTodos.length
@@ -483,6 +496,7 @@ Item {
         }
 
         Text {
+          textFormat: Text.PlainText
           visible: root.sessionTodos.length === 0
           width: parent.width
           text: Theme.t(root.lang, "Bu oturum için liste yok.", "No list for this session.")
@@ -542,6 +556,7 @@ Item {
                   color: Theme.withAlpha(root.tokens.ink || "#ffffff", emojiBtnArea.containsMouse ? 0.13 : 0.06)
 
                   Text {
+                    textFormat: Text.PlainText
                     anchors.centerIn: parent
                     text: Theme.todoEmoji(tdRowRect.st)
                     font.pixelSize: 15
@@ -563,6 +578,7 @@ Item {
                   spacing: 4
 
                   Text {
+                    textFormat: Text.PlainText
                     width: parent.width
                     text: tdRowRect.td.title || ""
                     wrapMode: Text.WordWrap
@@ -575,6 +591,7 @@ Item {
                   }
 
                   Text {
+                    textFormat: Text.PlainText
                     visible: (tdRowRect.td.detail || "").length > 0
                     width: parent.width
                     text: tdRowRect.td.detail || ""
@@ -602,6 +619,7 @@ Item {
                       border.color: Theme.withAlpha(Theme.priorityColor(tdRowRect.prio, "#888888"), 0.42)
 
                       Text {
+                        textFormat: Text.PlainText
                         id: dcPrioTxt
                         anchors.centerIn: parent
                         text: Theme.priorityLabel(tdRowRect.prio)
@@ -622,6 +640,7 @@ Item {
                       border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.10)
 
                       Text {
+                        textFormat: Text.PlainText
                         id: dcTimeTxt
                         anchors.centerIn: parent
                         text: tdRowRect.dueTimeStr
@@ -645,6 +664,7 @@ Item {
                         : Theme.withAlpha("#e44332", sessTdCompleteArea.containsMouse ? 0.65 : 0.38)
 
                       Text {
+                        textFormat: Text.PlainText
                         id: sessTdOriginTxt
                         anchors.centerIn: parent
                         text: tdRowRect.tdDone
@@ -693,6 +713,7 @@ Item {
         spacing: 8
 
         Text {
+          textFormat: Text.PlainText
           text: Theme.t(root.lang, "NOTLAR", "NOTES")
           font.family: root.fontFamily
           font.pixelSize: 10
@@ -723,6 +744,7 @@ Item {
             boundsBehavior: Flickable.StopAtBounds
 
             Text {
+              textFormat: Text.PlainText
               x: 2
               y: 1
               visible: noteField.text.length === 0
@@ -733,6 +755,7 @@ Item {
             }
 
             TextEdit {
+              textFormat: TextEdit.PlainText
               id: noteField
               width: noteFlick.width
               height: Math.max(noteFlick.height, contentHeight)
@@ -772,6 +795,7 @@ Item {
         spacing: 8
 
         Text {
+          textFormat: Text.PlainText
           text: Theme.t(root.lang, "BUGÜN", "TODAY")
           font.family: root.fontFamily
           font.pixelSize: 10
@@ -785,6 +809,7 @@ Item {
           height: 26
 
           Text {
+            textFormat: Text.PlainText
             anchors.left: parent.left
             anchors.baseline: parent.bottom
             text: {
@@ -800,6 +825,7 @@ Item {
           }
 
           Text {
+            textFormat: Text.PlainText
             anchors.right: parent.right
             anchors.baseline: parent.bottom
             text: {
@@ -846,6 +872,7 @@ Item {
         spacing: 6
 
         Text {
+          textFormat: Text.PlainText
           text: Theme.t(root.lang, "Sırada", "Up next")
           font.family: root.fontFamily
           font.pixelSize: 13
@@ -853,6 +880,7 @@ Item {
         }
 
         Text {
+          textFormat: Text.PlainText
           text: {
             var rmin = root.service ? (root.service.restMinutes || 10) : 10
             return rmin + " " + Theme.t(root.lang, "dakika mola", "minute break")

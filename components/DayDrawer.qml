@@ -147,6 +147,7 @@ Item {
         height: 28
 
         Text {
+          textFormat: Text.PlainText
           anchors.left: parent.left
           anchors.verticalCenter: parent.verticalCenter
           text: root.dayData ? Theme.formatDayHeading(root.dayData.day, root.lang) : ""
@@ -163,13 +164,14 @@ Item {
           height: 26
           radius: 7
           color: root.tokens.card2 || "#1f1f25"
-          Text { anchors.centerIn: parent; text: "×"; font.pixelSize: 16; color: root.tokens.secondary || "#aaaaaa" }
+          Text { textFormat: Text.PlainText; anchors.centerIn: parent; text: "×"; font.pixelSize: 16; color: root.tokens.secondary || "#aaaaaa" }
           MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: root.closeRequested() }
         }
       }
 
       // Big day total
       Text {
+        textFormat: Text.PlainText
         text: root.dayData
           ? (Theme.formatMinutes(root.dayTotalMins, root.lang) + " " + Theme.t(root.lang, "odak", "focused"))
           : ""
@@ -222,6 +224,7 @@ Item {
               color: seg.color || "#4c8df0"
             }
             Text {
+              textFormat: Text.PlainText
               text: seg.categoryName + " · " + Theme.formatMinutesShort(seg.minutes || 0, root.lang)
               font.family: root.fontFamily
               font.pixelSize: 11
@@ -252,6 +255,7 @@ Item {
           spacing: 8
 
           Text {
+            textFormat: Text.PlainText
             visible: root.daySessions.length === 0
             text: Theme.t(root.lang, "Bu günde kayıtlı oturum yok.", "No recorded sessions on this day.")
             font.family: root.fontFamily
@@ -304,6 +308,7 @@ Item {
                     }
 
                     Text {
+                      textFormat: Text.PlainText
                       anchors.verticalCenter: parent.verticalCenter
                       text: s.categoryName || ""
                       font.family: root.fontFamily
@@ -319,6 +324,7 @@ Item {
                     spacing: 6
 
                     Text {
+                      textFormat: Text.PlainText
                       anchors.verticalCenter: parent.verticalCenter
                       text: {
                         var base = Theme.formatHM(s.start) + " – " + Theme.formatHM(s.end)
@@ -346,6 +352,7 @@ Item {
                         : (root.tokens.line || Qt.rgba(1, 1, 1, 0.10))
 
                       Text {
+                        textFormat: Text.PlainText
                         id: drawerDelLbl
                         anchors.centerIn: parent
                         text: confirming
@@ -381,6 +388,7 @@ Item {
                 }
 
                 Text {
+                  textFormat: Text.PlainText
                   visible: (s.goal || "").length > 0 && s.goal !== s.categoryName
                   width: parent.width
                   text: s.goal || ""
@@ -391,6 +399,7 @@ Item {
                 }
 
                 Text {
+                  textFormat: Text.PlainText
                   visible: (Number(s.todosTotal) || 0) > 0
                   text: (s.todosDone || 0) + "/" + (s.todosTotal || 0) + " " + Theme.t(root.lang, "görev tamamlandı", "tasks completed")
                   font.family: root.fontFamily
@@ -399,6 +408,7 @@ Item {
                 }
 
                 Text {
+                  textFormat: Text.PlainText
                   visible: (s.note || "").length > 0
                   width: parent.width
                   text: "“" + s.note + "”"
@@ -425,6 +435,7 @@ Item {
         border.color: root.tokens.lineStrong || Qt.rgba(1, 1, 1, 0.14)
 
         Text {
+          textFormat: Text.PlainText
           anchors.centerIn: parent
           text: Theme.t(root.lang, "Oturumlar sayfasında aç →", "Open in Sessions →")
           font.family: root.fontFamily

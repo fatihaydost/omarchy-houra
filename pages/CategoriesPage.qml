@@ -232,6 +232,7 @@ Item {
           spacing: 3
 
           Text {
+            textFormat: Text.PlainText
             text: Theme.t(root.lang, "KONULAR", "TOPICS")
             font.family: root.fontFamily
             font.pixelSize: 10
@@ -241,6 +242,7 @@ Item {
           }
 
           Text {
+            textFormat: Text.PlainText
             text: Theme.t(root.lang, "Kategoriler", "Categories")
             font.family: root.fontFamily
             font.pixelSize: 26
@@ -263,6 +265,7 @@ Item {
           border.color: root.tokens.accent || "#3d8cff"
 
           Text {
+            textFormat: Text.PlainText
             id: addCatLbl
             anchors.centerIn: parent
             text: "+ " + Theme.t(root.lang, "Kategori", "Category")
@@ -283,6 +286,7 @@ Item {
       }
 
       Text {
+        textFormat: Text.PlainText
         width: parent.width
         text: Theme.t(
           root.lang,
@@ -395,6 +399,7 @@ Item {
                 spacing: 14
 
                 Text {
+                  textFormat: Text.PlainText
                   anchors.verticalCenter: parent.verticalCenter
                   text: (cat.sessionCount || 0) + " " + Theme.t(root.lang, "oturum", "sessions") +
                         " · " + Theme.formatMinutes(cat.totalMinutes || 0, root.lang)
@@ -414,6 +419,7 @@ Item {
                     : (delArea.containsMouse ? (root.tokens.raised || "#2b2b33") : "transparent")
 
                   Text {
+                    textFormat: Text.PlainText
                     id: delLbl
                     anchors.centerIn: parent
                     text: catRowCard.confirming

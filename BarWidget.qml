@@ -140,6 +140,7 @@ BarWidget {
       }
 
       Text {
+        textFormat: Text.PlainText
         visible: root.timerVisible && !root.vertical
         width: Math.ceil(clockMetrics.width)
         anchors.verticalCenter: parent.verticalCenter

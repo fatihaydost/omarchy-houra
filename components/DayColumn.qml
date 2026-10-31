@@ -133,6 +133,7 @@ Item {
       height: 1
 
       Text {
+        textFormat: Text.PlainText
         x: 0
         y: -6
         width: root.gutterW - 8
@@ -182,6 +183,7 @@ Item {
         spacing: 2
 
         Text {
+          textFormat: Text.PlainText
           width: parent.width
           text: (blk.goal && blk.goal !== blk.categoryName)
             ? (blk.categoryName + " · " + blk.goal)
@@ -194,6 +196,7 @@ Item {
         }
 
         Text {
+          textFormat: Text.PlainText
           visible: parent.parent.height > 34
           text: Theme.formatHM(blk.startEpoch) + " – " + Theme.formatHM(blk.endEpoch)
           font.family: "Monospace"
@@ -215,6 +218,7 @@ Item {
     color: root.tokens.primaryBg || "#ffffff"
 
     Text {
+      textFormat: Text.PlainText
       anchors.centerIn: parent
       text: root.nowLabel
       font.family: "Monospace"

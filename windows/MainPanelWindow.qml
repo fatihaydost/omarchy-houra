@@ -341,6 +341,7 @@ Item {
                   }
 
                   Text {
+                    textFormat: Text.PlainText
                     anchors.verticalCenter: parent.verticalCenter
                     text: "Houra"
                     font.family: root.fontFamily
@@ -361,6 +362,7 @@ Item {
                     : "transparent"
 
                   Text {
+                    textFormat: Text.PlainText
                     anchors.centerIn: parent
                     text: "×"
                     font.family: root.fontFamily
@@ -428,6 +430,7 @@ Item {
                       }
 
                       Text {
+                        textFormat: Text.PlainText
                         anchors.verticalCenter: parent.verticalCenter
                         text: modelData.label
                         font.family: root.fontFamily
@@ -499,6 +502,7 @@ Item {
                   }
 
                   Text {
+                    textFormat: Text.PlainText
                     anchors.verticalCenter: parent.verticalCenter
                     text: Theme.t(root.lang, "Ayarlar", "Settings")
                     font.family: root.fontFamily
@@ -535,6 +539,7 @@ Item {
                 border.color: root.tokens.accent || "#3d8cff"
 
                 Text {
+                  textFormat: Text.PlainText
                   anchors.centerIn: parent
                   text: "+ " + Theme.t(root.lang, "Yeni oturum", "New session")
                   font.family: root.fontFamily

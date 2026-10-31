@@ -405,6 +405,7 @@ Item {
           spacing: 3
 
           Text {
+            textFormat: Text.PlainText
             text: Theme.t(root.lang, "İSTATİSTİKLER", "STATISTICS")
             font.family: root.fontFamily
             font.pixelSize: 10
@@ -414,6 +415,7 @@ Item {
           }
 
           Text {
+            textFormat: Text.PlainText
             text: Theme.formatStatsTitle(root.stats.rangeStart, root.stats.rangeEnd, root.periodMode, root.lang)
             font.family: root.fontFamily
             font.pixelSize: 26
@@ -457,6 +459,7 @@ Item {
                   color: active ? (root.tokens.raised || "#2b2b33") : "transparent"
 
                   Text {
+                    textFormat: Text.PlainText
                     id: pLbl
                     anchors.centerIn: parent
                     text: modelData.label
@@ -487,7 +490,7 @@ Item {
               color: root.tokens.card || "#17171c"
               border.width: 1
               border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.08)
-              Text { anchors.centerIn: parent; text: "‹"; font.pixelSize: 15; color: root.tokens.ink || "#ffffff" }
+              Text { textFormat: Text.PlainText; anchors.centerIn: parent; text: "‹"; font.pixelSize: 15; color: root.tokens.ink || "#ffffff" }
               MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: root.stepRange(-1) }
             }
 
@@ -502,6 +505,7 @@ Item {
               border.color: kbFocused ? (root.tokens.ink || "#ffffff") : (root.tokens.line || Qt.rgba(1, 1, 1, 0.08))
 
               Text {
+                textFormat: Text.PlainText
                 id: rangeTxt
                 anchors.centerIn: parent
                 text: Theme.formatDateRangeLabel(root.stats.rangeStart, root.stats.rangeEnd, root.lang)
@@ -525,7 +529,7 @@ Item {
               color: root.tokens.card || "#17171c"
               border.width: 1
               border.color: root.tokens.line || Qt.rgba(1, 1, 1, 0.08)
-              Text { anchors.centerIn: parent; text: "›"; font.pixelSize: 15; color: root.tokens.ink || "#ffffff" }
+              Text { textFormat: Text.PlainText; anchors.centerIn: parent; text: "›"; font.pixelSize: 15; color: root.tokens.ink || "#ffffff" }
               MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: root.stepRange(1) }
             }
           }
@@ -577,6 +581,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               anchors.verticalCenter: parent.verticalCenter
               text: Theme.t(root.lang, "Yalnız ", "Only ") + (root.activeFilterCat ? root.activeFilterCat.name : "") + "  ×"
               font.family: root.fontFamily
@@ -614,6 +619,7 @@ Item {
             spacing: 4
 
             Text {
+              textFormat: Text.PlainText
               text: Theme.t(root.lang, "Toplam odak", "Total focus")
               font.family: root.fontFamily
               font.pixelSize: 11
@@ -621,6 +627,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               text: Theme.formatMinutes(root.stats.totalMinutes || 0, root.lang)
               font.family: root.fontFamily
               font.pixelSize: 20
@@ -629,6 +636,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               text: {
                 var dp = root.stats.deltaPct
                 if (dp === null || dp === undefined) {
@@ -661,6 +669,7 @@ Item {
             spacing: 4
 
             Text {
+              textFormat: Text.PlainText
               text: Theme.t(root.lang, "Günlük ortalama", "Daily average")
               font.family: root.fontFamily
               font.pixelSize: 11
@@ -668,6 +677,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               text: Theme.formatMinutes(root.stats.dailyAvgMinutes || 0, root.lang)
               font.family: root.fontFamily
               font.pixelSize: 20
@@ -676,6 +686,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               text: (root.stats.sessionsCount || 0) + " " + Theme.t(root.lang, "oturum", "sessions") +
                     " · " + (root.stats.activeDays || 0) + " " + Theme.t(root.lang, "aktif gün", "active days")
               font.family: root.fontFamily
@@ -700,6 +711,7 @@ Item {
             spacing: 4
 
             Text {
+              textFormat: Text.PlainText
               text: Theme.t(root.lang, "Görevler", "Tasks")
               font.family: root.fontFamily
               font.pixelSize: 11
@@ -707,6 +719,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               text: (root.stats.tasksDone || 0) + " / " + (root.stats.tasksTotal || 0) + " 🥳"
               font.family: root.fontFamily
               font.pixelSize: 20
@@ -715,6 +728,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               text: "%" + (root.stats.tasksPct || 0) + " " + Theme.t(root.lang, "tamamlandı", "completed")
               font.family: root.fontFamily
               font.pixelSize: 10
@@ -738,6 +752,7 @@ Item {
             spacing: 4
 
             Text {
+              textFormat: Text.PlainText
               text: Theme.t(root.lang, "En iyi gün", "Best day")
               font.family: root.fontFamily
               font.pixelSize: 11
@@ -745,6 +760,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               text: (root.stats.bestDayMinutes || 0) > 0
                 ? Theme.formatMinutes(root.stats.bestDayMinutes, root.lang)
                 : "—"
@@ -755,6 +771,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               text: root.stats.bestDay
                 ? (Theme.formatShortDay(root.stats.bestDay, root.lang) + " ↗")
                 : Theme.t(root.lang, "henüz kayıt yok", "no sessions yet")
@@ -783,6 +800,7 @@ Item {
         height: 30
 
         Text {
+          textFormat: Text.PlainText
           anchors.left: parent.left
           anchors.verticalCenter: parent.verticalCenter
           text: Theme.t(root.lang, "ZAMANA GÖRE", "OVER TIME")
@@ -824,6 +842,7 @@ Item {
                 color: active ? (root.tokens.raised || "#2b2b33") : "transparent"
 
                 Text {
+                  textFormat: Text.PlainText
                   id: cTabTxt
                   anchors.centerIn: parent
                   text: modelData.label
@@ -876,6 +895,7 @@ Item {
               spacing: 4
 
               Text {
+                textFormat: Text.PlainText
                 text: Theme.t(root.lang, "az", "less")
                 font.family: root.fontFamily
                 font.pixelSize: 10
@@ -895,6 +915,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 text: Theme.t(root.lang, "çok", "more")
                 font.family: root.fontFamily
                 font.pixelSize: 10
@@ -915,6 +936,7 @@ Item {
               Repeater {
                 model: [1, 2, 3, 4, 5, 6, 7]
                 delegate: Text {
+                  textFormat: Text.PlainText
                   width: (calInner.width - 36) / 7
                   horizontalAlignment: Text.AlignLeft
                   text: Theme.weekdayShort(modelData, root.lang)
@@ -965,6 +987,7 @@ Item {
                     spacing: 3
 
                     Text {
+                      textFormat: Text.PlainText
                       text: dObj ? (dObj.dayNum === 1 ? (Theme.monthShort(dObj.month, root.lang) + " 1") : String(dObj.dayNum)) : ""
                       font.family: root.fontFamily
                       font.pixelSize: 11
@@ -975,6 +998,7 @@ Item {
                     }
 
                     Text {
+                      textFormat: Text.PlainText
                       visible: mins > 0
                       text: Theme.formatMinutesShort(mins, root.lang)
                       font.family: "Monospace"
@@ -1244,6 +1268,7 @@ Item {
             z: 10
 
             Text {
+              textFormat: Text.PlainText
               id: flowTipTxt
               anchors.centerIn: parent
               text: {
@@ -1262,6 +1287,7 @@ Item {
 
           // Bottom date ticks
           Text {
+            textFormat: Text.PlainText
             anchors.left: parent.left
             anchors.bottom: parent.bottom
             text: root.days.length > 0 ? Theme.formatShortDay(root.days[0].day, root.lang) : ""
@@ -1271,6 +1297,7 @@ Item {
           }
 
           Text {
+            textFormat: Text.PlainText
             anchors.right: parent.right
             anchors.bottom: parent.bottom
             text: root.days.length > 1 ? Theme.formatShortDay(root.days[root.days.length - 1].day, root.lang) : ""
@@ -1328,6 +1355,7 @@ Item {
             height: 16
 
             Text {
+              textFormat: Text.PlainText
               anchors.right: parent.right
               anchors.verticalCenter: parent.verticalCenter
               text: Theme.t(root.lang, "Son 31 gün gösteriliyor", "Showing last 31 days")
@@ -1345,6 +1373,7 @@ Item {
             Repeater {
               model: [6, 9, 12, 15, 18, 21, 24]
               delegate: Text {
+                textFormat: Text.PlainText
                 readonly property real plotW: tmCol.width - 64 - 64
                 x: 64 + ((modelData - 6) / 18.0) * plotW - (modelData === 24 ? implicitWidth : 0)
                 text: (modelData < 10 ? "0" + modelData : String(modelData))
@@ -1369,6 +1398,7 @@ Item {
                 height: 20
 
                 Text {
+                  textFormat: Text.PlainText
                   width: 58
                   anchors.verticalCenter: parent.verticalCenter
                   text: tdObj ? (Theme.weekdayShort(tdObj.weekday, root.lang) + " " + tdObj.dayNum) : ""
@@ -1407,6 +1437,7 @@ Item {
                 }
 
                 Text {
+                  textFormat: Text.PlainText
                   anchors.right: parent.right
                   width: 58
                   horizontalAlignment: Text.AlignRight
@@ -1454,6 +1485,7 @@ Item {
             height: 18
 
             Text {
+              textFormat: Text.PlainText
               anchors.left: parent.left
               anchors.verticalCenter: parent.verticalCenter
               text: Theme.t(root.lang, "KATEGORİLER", "CATEGORIES")
@@ -1465,6 +1497,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               anchors.right: parent.right
               anchors.verticalCenter: parent.verticalCenter
               text: Theme.t(
@@ -1479,6 +1512,7 @@ Item {
           }
 
           Text {
+            textFormat: Text.PlainText
             visible: root.catBreakdown.length === 0
             text: Theme.t(root.lang, "Bu dönemde oturum yok.", "No sessions in this period.")
             font.family: root.fontFamily
@@ -1538,6 +1572,7 @@ Item {
                     }
 
                     Text {
+                      textFormat: Text.PlainText
                       anchors.verticalCenter: parent.verticalCenter
                       text: cb.name || ""
                       font.family: root.fontFamily
@@ -1548,6 +1583,7 @@ Item {
                   }
 
                   Text {
+                    textFormat: Text.PlainText
                     anchors.right: parent.right
                     anchors.verticalCenter: parent.verticalCenter
                     text: Theme.formatMinutes(cb.minutes || 0, root.lang) + "   " + (cb.pct || 0) + "%"
@@ -1611,6 +1647,7 @@ Item {
             height: 18
 
             Text {
+              textFormat: Text.PlainText
               anchors.left: parent.left
               anchors.verticalCenter: parent.verticalCenter
               text: Theme.t(root.lang, "EN VERİMLİ SAATLER", "MOST PRODUCTIVE HOURS")
@@ -1622,6 +1659,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               anchors.right: parent.right
               anchors.verticalCenter: parent.verticalCenter
               text: {
@@ -1685,6 +1723,7 @@ Item {
             Repeater {
               model: [0, 3, 6, 9, 12, 15, 18, 21, 23]
               delegate: Text {
+                textFormat: Text.PlainText
                 x: modelData === 23
                   ? (parent.width - implicitWidth)
                   : ((modelData / 24.0) * parent.width)

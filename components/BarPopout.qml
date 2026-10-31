@@ -267,6 +267,7 @@ Item {
             spacing: 2
 
             Text {
+              textFormat: Text.PlainText
               text: {
                 var mins = root.service && root.service.todayData ? (root.service.todayData.focusMinutes || 0) : 0
                 return Theme.t(root.lang, "Bugün ", "Today ") + Theme.formatMinutes(mins, root.lang) + Theme.t(root.lang, " odak", " focused")
@@ -278,6 +279,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               text: {
                 var td = root.service && root.service.todayData ? root.service.todayData : null
                 var sc = td ? (td.sessionsCount || 0) : 0
@@ -304,6 +306,7 @@ Item {
             border.color: Commons.Color.popups.text
 
             Text {
+              textFormat: Text.PlainText
               anchors.centerIn: parent
               text: Theme.t(root.lang, "Oturum başlat…", "Start session…")
               font.family: Style.font.family
@@ -332,6 +335,7 @@ Item {
             spacing: 4
 
             Text {
+              textFormat: Text.PlainText
               text: Theme.t(root.lang, "SON OTURUMU TEKRARLA", "REPEAT A RECENT SESSION")
               font.family: Style.font.family
               font.pixelSize: 9
@@ -341,6 +345,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               visible: repeatCol.repeats.length === 0
               text: Theme.t(root.lang, "Henüz oturum yok", "No sessions yet")
               font.family: Style.font.family
@@ -375,6 +380,7 @@ Item {
                   }
 
                   Text {
+                    textFormat: Text.PlainText
                     width: parent.width - 78
                     anchors.verticalCenter: parent.verticalCenter
                     text: rep.goal ? (rep.categoryName + " · " + rep.goal) : rep.categoryName
@@ -385,6 +391,7 @@ Item {
                   }
 
                   Text {
+                    textFormat: Text.PlainText
                     width: 50
                     horizontalAlignment: Text.AlignRight
                     anchors.verticalCenter: parent.verticalCenter
@@ -423,6 +430,7 @@ Item {
             spacing: 2
 
             Text {
+              textFormat: Text.PlainText
               width: parent.width
               text: {
                 if (!root.service) return ""
@@ -438,6 +446,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               width: parent.width
               text: {
                 if (!root.service) return ""
@@ -501,6 +510,7 @@ Item {
                     : "transparent"
 
                   Text {
+                    textFormat: Text.PlainText
                     anchors.centerIn: parent
                     text: Theme.todoEmoji(popTdRow.st)
                     font.pixelSize: 13
@@ -533,6 +543,7 @@ Item {
                     : Theme.withAlpha("#e44332", popTdPillArea.containsMouse ? 0.65 : 0.38)
 
                   Text {
+                    textFormat: Text.PlainText
                     id: popTdPillTxt
                     anchors.centerIn: parent
                     text: popTdRow.tdDone
@@ -562,6 +573,7 @@ Item {
                 }
 
                 Text {
+                  textFormat: Text.PlainText
                   id: popPrioLbl
                   visible: popTdRow.prio > 1
                   anchors.left: popEmojiBtn.right
@@ -575,6 +587,7 @@ Item {
                 }
 
                 Text {
+                  textFormat: Text.PlainText
                   anchors.left: popTdRow.prio > 1 ? popPrioLbl.right : popEmojiBtn.right
                   anchors.leftMargin: 6
                   anchors.right: popTdRow.hasTd ? popTdPill.left : parent.right
@@ -621,6 +634,7 @@ Item {
               border.color: Theme.withAlpha(Commons.Color.popups.text, 0.65)
 
               Text {
+                textFormat: Text.PlainText
                 anchors.centerIn: parent
                 text: root.service && root.service.phase === "paused"
                   ? Theme.t(root.lang, "Devam et", "Resume")
@@ -655,6 +669,7 @@ Item {
               border.color: Commons.Color.popups.text
 
               Text {
+                textFormat: Text.PlainText
                 anchors.centerIn: parent
                 text: Theme.t(root.lang, "Oturumu bitir", "Finish session")
                 font.family: Style.font.family
@@ -698,6 +713,7 @@ Item {
                 border.color: Theme.withAlpha(Commons.Color.popups.text, 0.60)
 
                 Text {
+                  textFormat: Text.PlainText
                   anchors.centerIn: parent
                   width: parent.width - 8
                   horizontalAlignment: Text.AlignHCenter
@@ -733,6 +749,7 @@ Item {
                 border.color: root.tokens.danger || "#e06458"
 
                 Text {
+                  textFormat: Text.PlainText
                   anchors.centerIn: parent
                   width: parent.width - 8
                   horizontalAlignment: Text.AlignHCenter
@@ -775,6 +792,7 @@ Item {
                 border.color: root.tokens.danger || "#e06458"
 
                 Text {
+                  textFormat: Text.PlainText
                   anchors.centerIn: parent
                   text: Theme.t(root.lang, "Kaydetmeden iptal et", "Discard session")
                   font.family: Style.font.family
@@ -809,6 +827,7 @@ Item {
                 border.color: Theme.withAlpha(Commons.Color.popups.text, 0.55)
 
                 Text {
+                  textFormat: Text.PlainText
                   anchors.centerIn: parent
                   text: Theme.t(root.lang, "Vazgeç", "Keep")
                   font.family: Style.font.family
@@ -842,6 +861,7 @@ Item {
             spacing: 2
 
             Text {
+              textFormat: Text.PlainText
               text: Theme.t(root.lang, "Mola · ", "Break · ") + (root.service ? root.service.restClockText : "00:00")
               font.family: Style.font.family
               font.pixelSize: 13
@@ -850,6 +870,7 @@ Item {
             }
 
             Text {
+              textFormat: Text.PlainText
               text: Theme.t(root.lang, "Mola ekranından acil durumla döndün.", "You left the break screen early.")
               font.family: Style.font.family
               font.pixelSize: 12
@@ -873,6 +894,7 @@ Item {
               border.color: Theme.withAlpha(Commons.Color.popups.text, 0.65)
 
               Text {
+                textFormat: Text.PlainText
                 anchors.centerIn: parent
                 text: Theme.t(root.lang, "Molaya geri dön", "Back to break")
                 font.family: Style.font.family
@@ -904,6 +926,7 @@ Item {
               border.color: Commons.Color.popups.text
 
               Text {
+                textFormat: Text.PlainText
                 anchors.centerIn: parent
                 text: Theme.t(root.lang, "Molayı bitir, yeni oturum…", "End break, new session…")
                 elide: Text.ElideRight
@@ -942,6 +965,7 @@ Item {
           spacing: 5
 
           Text {
+            textFormat: Text.PlainText
             text: Theme.t(root.lang, "EKRANDA GÖSTER", "SHOW ON SCREEN")
             font.family: Style.font.family
             font.pixelSize: 9
@@ -976,6 +1000,7 @@ Item {
                 border.color: Commons.Color.accent
 
                 Text {
+                  textFormat: Text.PlainText
                   anchors.centerIn: parent
                   text: modelData.label
                   font.family: Style.font.family
@@ -1024,6 +1049,7 @@ Item {
               border.color: Theme.withAlpha(Commons.Color.popups.text, 0.55)
 
               Text {
+                textFormat: Text.PlainText
                 anchors.left: parent.left
                 anchors.leftMargin: 8
                 anchors.verticalCenter: parent.verticalCenter
@@ -1034,6 +1060,7 @@ Item {
               }
 
               Text {
+                textFormat: Text.PlainText
                 anchors.right: parent.right
                 anchors.rightMargin: 8
                 anchors.verticalCenter: parent.verticalCenter
